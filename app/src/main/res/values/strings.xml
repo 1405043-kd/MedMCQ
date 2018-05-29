@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MediTest</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="button11">জীববিজ্ঞান ১ম পত্র</string>
+    <string name="button12">জীববিজ্ঞান ২য় পত্র</string>
+    <string name="button13">রসায়ন ১ম পত্র</string>
+    <string name="button14">রসায়ন ২য় পত্র</string>
+    <string name="button15">পদার্থবিজ্ঞান ১ম পত্র</string>
+    <string name="button16">পদার্থবিজ্ঞান ২য় পত্র</string>
+    <string name="button17">ইংরেজি</string>
+    <string name="button18">সাধারণ জ্ঞান</string>
+    <string name="homepage_string">হোমপেজ</string>
+    <string name="exam_notice">Exam Notice</string>
+    <string name="button_exam">পরীক্ষা দিন</string>
+    <string name="button_archive">আর্কাইভ</string>
+    <string name="next_exam">পরবর্তী পরীক্ষা</string>
+    <string name="last_medi_qstn">বিগত সালের মেডিকেল প্রশ্ন</string>
+    <string name="dental_qstn">বিগত সালের ডেন্টাল প্রশ্ন</string>
+    <string name="subject_prep">বিষয়ভিত্তিক প্রস্তুতি</string>
+    <string name="actvity_notice_head">নোটিশ</string>
+    <string name="subject_name_header">বিষয়সমূহ</string>
+</resources>

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1ABC9C"
+    tools:context=".SubjectListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/card_view_sub1"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            card_view:cardBackgroundColor="#27AE60"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="3dp"
+            card_view:contentPadding="4dp"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            >
+
+            <FrameLayout
+                android:background="#FFFFFF"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/icons8_potted_plant_96"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/item_image_sub1"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:text="জীববিজ্ঞান"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:id="@+id/item_title_sub1"
+                    android:layout_toEndOf="@+id/item_image_sub1"
+                    android:layout_alignParentTop="true"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:text="১ম পত্র"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:id="@+id/item_detail_sub1"
+                    android:layout_toEndOf="@+id/item_image_sub1"
+                    android:layout_below="@+id/item_title_sub1"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/card_view_sub2"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            card_view:cardBackgroundColor="#27AE60"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="3dp"
+            card_view:contentPadding="4dp"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            >
+
+            <FrameLayout
+                android:background="#FFFFFF"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/icons8_octopus_80"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/item_image_sub2"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:text="জীববিজ্ঞান"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:id="@+id/item_title"
+                    android:layout_toEndOf="@+id/item_image_sub2"
+                    android:layout_alignParentTop="true"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:text="২য় পত্র"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:id="@+id/item_detail"
+                    android:layout_toEndOf="@+id/item_image_sub2"
+                    android:layout_below="@+id/item_title"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/card_view_sub3"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            card_view:cardBackgroundColor="#27AE60"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="3dp"
+            card_view:contentPadding="4dp"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            >
+
+            <FrameLayout
+                android:background="#FFFFFF"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/icons8_molecule_80_chemistry1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/item_image_sub3"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:text="রসায়ন"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:id="@+id/item_title_sub3"
+                    android:layout_toEndOf="@+id/item_image_sub3"
+                    android:layout_alignParentTop="true"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:text="১ম পত্র"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:id="@+id/item_detail_sub3"
+                    android:layout_toEndOf="@+id/item_image_sub3"
+                    android:layout_below="@+id/item_title_sub3"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/card_view_sub4"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            card_view:cardBackgroundColor="#27AE60"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="3dp"
+            card_view:contentPadding="4dp"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            >
+
+            <FrameLayout
+                android:background="#FFFFFF"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/icons8_test_tube_128_chemistry2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/item_image_sub4"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:text="রসায়ন"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:id="@+id/item_title_sub4"
+                    android:layout_toEndOf="@+id/item_image_sub4"
+                    android:layout_alignParentTop="true"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:text="২য় পত্র"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:id="@+id/item_detail_sub4"
+                    android:layout_toEndOf="@+id/item_image_sub4"
+                    android:layout_below="@+id/item_title_sub4"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/card_view_sub5"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            card_view:cardBackgroundColor="#27AE60"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="3dp"
+            card_view:contentPadding="4dp"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            >
+
+            <FrameLayout
+                android:background="#FFFFFF"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/icons8_physics_128_1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/item_image_sub5"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:text="পদার্থবিজ্ঞান"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:id="@+id/item_title_sub5"
+                    android:layout_toEndOf="@+id/item_image_sub5"
+                    android:layout_alignParentTop="true"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:text="১ম পত্র"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:id="@+id/item_detail_sub5"
+                    android:layout_toEndOf="@+id/item_image_sub5"
+                    android:layout_below="@+id/item_title_sub5"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/card_view_sub6"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            card_view:cardBackgroundColor="#27AE60"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="3dp"
+            card_view:contentPadding="4dp"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            >
+
+            <FrameLayout
+                android:background="#FFFFFF"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/icons8_einstein_filled_100_physics2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/item_image_sub6"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:text="পদার্থবিজ্ঞান"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:id="@+id/item_title_sub6"
+                    android:layout_toEndOf="@+id/item_image_sub6"
+                    android:layout_alignParentTop="true"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:text="২য় পত্র"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:id="@+id/item_detail_sub6"
+                    android:layout_toEndOf="@+id/item_image_sub6"
+                    android:layout_below="@+id/item_title_sub6"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/card_view_sub7"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            card_view:cardBackgroundColor="#27AE60"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="3dp"
+            card_view:contentPadding="4dp"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <FrameLayout
+                android:background="#FFFFFF"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/icons8_globe_earth_64_general"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/item_image_sub7"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:text="সাধারণ জ্ঞান"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:id="@+id/item_title_sub7"
+                    android:layout_toEndOf="@+id/item_image_sub7"
+                    android:layout_alignParentTop="true"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/card_view_sub8"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            card_view:cardBackgroundColor="#27AE60"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="3dp"
+            card_view:contentPadding="4dp"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <FrameLayout
+                android:background="#FFFFFF"
+                android:layout_width="4dp"
+                android:layout_height="match_parent"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:src="@drawable/icons8_literature_48_eng"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/item_image_sub8"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:text="ইংরেজি"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:id="@+id/item_title_sub8"
+                    android:layout_toEndOf="@+id/item_image_sub8"
+                    android:layout_alignParentTop="true"
+                    android:textSize="30sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+</ScrollView>
