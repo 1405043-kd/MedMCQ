@@ -1,4 +1,4 @@
-package com.example.sakib.myapplication.models;
+package com.example.sakib.myapplication.models.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

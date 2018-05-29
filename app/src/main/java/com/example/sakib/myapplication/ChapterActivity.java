@@ -2,15 +2,13 @@ package com.example.sakib.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sakib.myapplication.models.ChapterAdapter;
+import com.example.sakib.myapplication.models.Adapters.ChapterAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
