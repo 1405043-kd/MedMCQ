@@ -25,7 +25,8 @@ public class QuestionAdapter extends ArrayAdapter<Questions> {
     private Context context;
     private List<Questions> values;
     private String[] answers;
-    public int selectedId;
+    public int selectedId=0;
+    RadioButton selectedAnswer;
 
     public QuestionAdapter(Context context, List<Questions> values,String[] answers) {
         super(context, R.layout.question_pagination_item, values);
@@ -75,18 +76,28 @@ public class QuestionAdapter extends ArrayAdapter<Questions> {
 //        button.setClickable(false);
 
 //
-//        r.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-////                int pos = (int) radioGroup.getTag();
-////                data[pos].selectedId = radioGroup.getCheckedRadioButtonId();
-//                selectedId = radioGroup.getCheckedRadioButtonId();
-//            }
-//        });
+        final View finalRow = row;
+        final int pos = position;
+        r.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+//                int pos = (int) radioGroup.getTag();
+//                data[pos].selectedId = radioGroup.getCheckedRadioButtonId();
+                selectedId = radioGroup.getCheckedRadioButtonId();
+                String s = Integer.toString(selectedId);
+                if(selectedId!=0) {
+                    selectedAnswer = finalRow.findViewById(selectedId);
+
+                    String answera= (String) selectedAnswer.getText();
+                    System.out.println(answera + "fooch");
+                    answers[pos] = selectedAnswer.getText().toString();
+                }
+
+//                Toast.makeText(QuestionAdapter.this, s, Toast.LENGTH_SHORT).show();
+            }
+        });
 //
 //
-//        RadioButton selectedAnswer = row.findViewById(selectedId);
-//        answers[position] = selectedAnswer.getText().toString();
 
 
 

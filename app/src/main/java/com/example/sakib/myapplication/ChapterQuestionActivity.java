@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -11,6 +12,7 @@ import com.example.sakib.myapplication.models.Adapters.QuestionAdapter;
 import com.example.sakib.myapplication.models.QuestionClient;
 import com.example.sakib.myapplication.models.Questions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -22,6 +24,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ChapterQuestionActivity extends AppCompatActivity {
     String apiStr="";
     ListView questionList;
+    Button buttonSubmit;
+    String []answers;
+    List<Questions> questions=new ArrayList<Questions>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,14 +51,16 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
         Call<List<Questions>> call_cq =questionClient.cqAll();
 
+        buttonSubmit = (Button) findViewById(R.id.subBut);
 
         call_cq.enqueue(new Callback<List<Questions>>() {
             @Override
             public void onResponse(Call<List<Questions>> call, Response<List<Questions>> response) {
                 System.out.println("hcud");
-                List<Questions> questions = response.body();
 
-                String []answers=new String[questions.size()+1];
+                questions = response.body();
+
+                answers=new String[questions.size()];
 
                 questionList.setAdapter(new QuestionAdapter(ChapterQuestionActivity.this, questions, answers));
 
@@ -67,7 +74,20 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                     }
                 });
 
-                Toast.makeText(ChapterQuestionActivity.this, answers[0],Toast.LENGTH_SHORT).show();
+
+
+                buttonSubmit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Toast.makeText(ChapterQuestionActivity.this, answers[0]+answers[1]+answers[2],Toast.LENGTH_SHORT).show();
+                        for(int ii=0; ii<questions.size();ii++)
+                        {
+                            System.out.print(answers[ii]+" "+questions.get(ii)+" yobabes");
+                        }
+
+                    }
+                });
 
             }
 
