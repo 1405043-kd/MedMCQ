@@ -68,12 +68,8 @@
         <activity
             android:name=".ChapterQuestionActivity"
             android:label="প্রশ্নগুলি"
-            android:parentActivityName=".ChapterActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ChapterActivity" />
-        </activity>
+            android:theme="@style/AppTheme"/>
+
     </application>
 
 </manifest>
