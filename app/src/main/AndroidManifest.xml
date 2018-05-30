@@ -67,8 +67,22 @@
         </activity>
         <activity
             android:name=".ChapterQuestionActivity"
-            android:label="প্রশ্নগুলি"
-            android:theme="@style/AppTheme"/>
+            android:label="অধ্যায়সমূহ"
+            android:parentActivityName=".ChapterActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ChapterActivity" />
+        </activity>
+        <activity
+            android:name=".PrevMedDenQuestionActivity"
+            android:label="অধ্যায়সমূহ"
+            android:parentActivityName=".MedicalMainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MedicalMainActivity" />
+        </activity>
 
     </application>
 

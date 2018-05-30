@@ -19,7 +19,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ChapterQuestionActivity extends AppCompatActivity {
+public class PrevMedDenQuestionActivity extends AppCompatActivity{
     String apiStr="";
     ListView questionList;
     @Override
@@ -32,7 +32,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
             apiStr = extras.getString("apiStr");
         }
 
-        Toast.makeText(ChapterQuestionActivity.this,apiStr, Toast.LENGTH_SHORT).show();
+        Toast.makeText(PrevMedDenQuestionActivity.this,apiStr, Toast.LENGTH_SHORT).show();
 
         questionList = (ListView) findViewById(R.id.question_pagination_list);
 
@@ -44,7 +44,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         Retrofit retrofit = builder.build();
         QuestionClient questionClient = retrofit.create(QuestionClient.class);
 
-        Call<List<Questions>> call_cq =questionClient.cqAll();
+        Call<List<Questions>> call_cq =questionClient.xqAll();
 
 
         call_cq.enqueue(new Callback<List<Questions>>() {
@@ -55,27 +55,25 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
                 String []answers=new String[questions.size()+1];
 
-                questionList.setAdapter(new QuestionAdapter(ChapterQuestionActivity.this, questions, answers));
-
+                questionList.setAdapter(new QuestionAdapter(PrevMedDenQuestionActivity.this, questions, answers));
                 questionList.setOnItemClickListener(new ListView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Questions questions=(Questions) adapterView.getItemAtPosition(i);
 
-                        Toast.makeText(ChapterQuestionActivity.this, questions.getQuestion(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PrevMedDenQuestionActivity.this, questions.getQuestion(), Toast.LENGTH_SHORT).show();
 
                     }
                 });
-
-                Toast.makeText(ChapterQuestionActivity.this, answers[0],Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onFailure(Call<List<Questions>> call, Throwable t) {
-                Toast.makeText(ChapterQuestionActivity.this, "error :(", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PrevMedDenQuestionActivity.this, "error :(", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
+
 }

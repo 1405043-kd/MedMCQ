@@ -8,6 +8,7 @@ public class Questions {
     private String Option2;
     private String Option3;
     private String Option4;
+    private String CorrectAns;
 
 
     public Questions() {
@@ -40,4 +41,6 @@ public class Questions {
     public String getOption4() {
         return Option4;
     }
+
+    public String getCorrectAns() { return CorrectAns; }
 }
