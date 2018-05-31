@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sakib.myapplication">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -83,7 +84,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MedicalMainActivity" />
         </activity>
-
+        <activity android:name=".MediDentalPreviousActivity"></activity>
     </application>
 
 </manifest>

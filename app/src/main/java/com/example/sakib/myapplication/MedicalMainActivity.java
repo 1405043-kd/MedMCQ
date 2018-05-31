@@ -21,8 +21,8 @@ public class MedicalMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_medical_main);
 
         subjectListButton = (Button) findViewById(R.id.button_sub);
-        previousMediQuesButton = (Button) findViewById(R.id.button_dentalQstn);
-        previousDentalQuesButton = (Button) findViewById (R.id.button_medicalQstn);
+        previousDentalQuesButton = (Button) findViewById(R.id.button_dentalQstn);
+        previousMediQuesButton = (Button) findViewById (R.id.button_medicalQstn);
 
         subjectListButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,13 +33,13 @@ public class MedicalMainActivity extends AppCompatActivity {
         previousDentalQuesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchactivity_previousmeden("den");
+                launchactivity_previousmeden("dentalButton");
             }
         });
         previousMediQuesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchactivity_previousmeden("med");
+                launchactivity_previousmeden("mediButton");
             }
         });
 
@@ -51,10 +51,17 @@ public class MedicalMainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void launchactivity_previousmeden(String medden)
-    {
-        Intent intent = new Intent(this, PrevMedDenQuestionActivity.class);
-        intent.putExtra("meode", medden);
-        startActivity(intent);
-    }
+//    private void launchactivity_previousmeden(String medden)
+//    {
+//        Intent intent = new Intent(this, PrevMedDenQuestionActivity.class);
+//        intent.putExtra("meode", medden);
+//        startActivity(intent);
+//    }
+
+      private void launchactivity_previousmeden(String medden)
+      {
+          Intent intent = new Intent(this, MediDentalPreviousActivity.class);
+          intent.putExtra("subName",medden);
+          startActivity(intent);
+      }
 }
