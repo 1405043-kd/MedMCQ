@@ -3,7 +3,9 @@ package com.example.sakib.myapplication.models;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface QuestionClient {
@@ -28,10 +30,13 @@ public interface QuestionClient {
     @GET("/q_set/")
     Call<List<QuestionSet>> q_set();
 
-    @GET("/e_history")
+    @GET("/e_history/")
     Call<List<ExamHistory>> e_history();
 
     @GET("/e_history/{user_id}/")
     Call<List<ExamHistory>> e_history_user(@Path("user_id") String user_id);
+
+    @POST("/e_history/")
+    Call<ExamHistory> post_e_history(@Body ExamHistory examHistory);
 
 }
