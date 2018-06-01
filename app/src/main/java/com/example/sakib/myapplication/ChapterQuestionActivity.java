@@ -2,6 +2,7 @@ package com.example.sakib.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +14,9 @@ import com.example.sakib.myapplication.models.Adapters.QuestionAdapter;
 import com.example.sakib.myapplication.models.ExamHistory;
 import com.example.sakib.myapplication.models.QuestionClient;
 import com.example.sakib.myapplication.models.Questions;
+import com.google.gson.Gson;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +48,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
         questionList = (ListView) findViewById(R.id.question_pagination_list);
 
-        Retrofit.Builder builder = new Retrofit.Builder()
+        final Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl("http://192.168.0.104:8000/")
                 //    .baseUrl("https://api.github.com/")
                 .addConverterFactory(GsonConverterFactory.create());
@@ -95,6 +98,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 //                            answers[ii]=answers[ii]+"( haha )"+ "lol(DE)";
                             if(answers[ii]!=null) {
                                 ans = answers[ii].substring(answers[ii].indexOf("(") + 1, answers[ii].indexOf(")"));
+                                answers[ii]=ans;
                                 Toast.makeText(ChapterQuestionActivity.this, ans, Toast.LENGTH_SHORT).show();
                                 if (questions.get(ii).getCorrectAns().contains(ans))
                                     total += 1;
@@ -108,7 +112,16 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                         sendExamHistory(examHistory);
 
                         Toast.makeText(ChapterQuestionActivity.this, Float.toString(total), Toast.LENGTH_SHORT).show();
-                        launchactivityResult(total);
+                        Bundle bundle=new Bundle();
+                        String listSerializedToJson = new Gson().toJson(questions);
+                    //    bundle.putString("questions",listSerializedToJson);
+                        List<Questions> ques=questions;
+                      //  bundle.putParcelableArrayList("que", (ArrayList<? extends Parcelable>) ques);
+                        bundle.putString("que",listSerializedToJson);
+                        bundle.putStringArray("ans",answers);
+                        bundle.putFloat("res",total);
+
+                        launchactivityResult(bundle);
                     }
                 });
 
@@ -148,10 +161,11 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
     }
 
-    private void launchactivityResult(Float valueA)
+    private void launchactivityResult(Bundle bundle)
     {
         Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("Result",valueA);
+       // intent.putExtra("Result",valueA);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }

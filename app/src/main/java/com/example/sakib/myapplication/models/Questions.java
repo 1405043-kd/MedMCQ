@@ -1,6 +1,11 @@
 package com.example.sakib.myapplication.models;
 
-public class Questions {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Questions implements Serializable{
     //   private int id;
     //   private String MVD;
     private int QuestionId;
@@ -49,4 +54,21 @@ public class Questions {
     }
 
     public String getCorrectAns() { return CorrectAns; }
+
+//    @Override
+//    public int describeContents() {
+//        return this.hashCode();
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel parcel, int i) {
+//        parcel.writeInt(QuestionId);
+//        parcel.writeString(Question);
+//        parcel.writeString(Option1);
+//        parcel.writeString(Option2);
+//        parcel.writeString(Option3);
+//        parcel.writeString(Option4);
+//        parcel.writeString(CorrectAns);
+//
+//    }
 }
