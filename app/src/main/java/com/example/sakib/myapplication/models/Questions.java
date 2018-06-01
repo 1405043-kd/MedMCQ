@@ -3,6 +3,7 @@ package com.example.sakib.myapplication.models;
 public class Questions {
     //   private int id;
     //   private String MVD;
+    private int QuestionId;
     private String Question;
     private String Option1;
     private String Option2;
@@ -16,6 +17,11 @@ public class Questions {
 
 //    public int getId() {
 //
+
+    public int getQuestionId() {
+        return QuestionId;
+    }
+
 //        return id;
 //    }
 //    public String getMVD(){

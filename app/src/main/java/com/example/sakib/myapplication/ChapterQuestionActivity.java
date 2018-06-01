@@ -1,5 +1,6 @@
 package com.example.sakib.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -103,10 +104,11 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                             }
                         }
 
-                        ExamHistory examHistory= new ExamHistory(1,1,"C", (int) total,32);
+                        ExamHistory examHistory= new ExamHistory(1,questions.get(0).getQuestionId(),"C", total);
                         sendExamHistory(examHistory);
 
                         Toast.makeText(ChapterQuestionActivity.this, Float.toString(total), Toast.LENGTH_SHORT).show();
+                        launchactivityResult(total);
                     }
                 });
 
@@ -139,10 +141,17 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ExamHistory> call, Throwable t) {
-                Toast.makeText(ChapterQuestionActivity.this, "error :(", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ChapterQuestionActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
             }
         });
 
 
+    }
+
+    private void launchactivityResult(Float valueA)
+    {
+        Intent intent = new Intent(this, ResultActivity.class);
+        intent.putExtra("Result",valueA);
+        startActivity(intent);
     }
 }

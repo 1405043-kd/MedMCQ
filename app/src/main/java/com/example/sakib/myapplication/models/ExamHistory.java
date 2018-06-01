@@ -5,18 +5,17 @@ public class ExamHistory {
     private int UserId;
     private int QuestionId;
     private String TableName;
-    private int marks;
+    private float marks;
     private int position;
 
     public ExamHistory() {
     }
 
-    public ExamHistory(int userId, int questionId, String tableName, int marks, int position) {
-        UserId = userId;
-        QuestionId = questionId;
-        TableName = tableName;
-        marks = marks;
-        position = position;
+    public ExamHistory(int userId, int questionId, String tableName, float marks) {
+        this.UserId = userId;
+        this.QuestionId = questionId;
+        this.TableName = tableName;
+        this.marks = marks;
     }
 
     public int getUserId() {
@@ -31,7 +30,7 @@ public class ExamHistory {
         return TableName;
     }
 
-    public int getMarks() {
+    public float getMarks() {
         return marks;
     }
 
