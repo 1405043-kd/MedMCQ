@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/medi_bg"
+    android:background="#1ABC9C"
     tools:context=".VarsityActivity">
 
     <LinearLayout
@@ -95,31 +95,19 @@
             android:layout_gravity="center" />
 
         <Button
-            android:id="@+id/button_medicalQstn"
+            android:id="@+id/button_varsityQstn"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_margin="8dp"
-            android:text="@string/last_medi_qstn"
+            android:text="ভার্সিটি জীববিজ্ঞান প্রশ্ন"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:background="#e6b800"
             android:layout_gravity="center"/>
 
-        <Button
-            android:id="@+id/button_dentalQstn"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:layout_margin="8dp"
-            android:text="@string/dental_qstn"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:background="#b30000"
-            android:layout_gravity="center"
-            android:layout_marginBottom="32dp"/>
+
 
     </LinearLayout>
 </ScrollView>
