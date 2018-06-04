@@ -68,7 +68,7 @@
         </activity>
         <activity
             android:name=".ChapterQuestionActivity"
-            android:label="অধ্যায়সমূহ" />
+            android:label="প্রশ্নপত্র" />
         <activity
             android:name=".PrevMedDenQuestionActivity"
             android:label="অধ্যায়সমূহ"
@@ -89,6 +89,24 @@
         </activity>
 
         <activity android:name=".MediDentalPreviousActivity"></activity>
+
+        <activity
+            android:name=".VarsitySubjectActivity"
+            android:label="বিষয়সময়হ"
+            android:parentActivityName=".VarsityActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VarsityActivity" />
+        </activity>
+        <activity
+            android:name=".BiologyChapterActivity"
+            android:label="অধ্যায়সমূহ"
+            android:parentActivityName=".VarsitySubjectActivity"
+            android:theme="@style/AppTheme" >
+        </activity>
+
+
     </application>
 
 </manifest>
