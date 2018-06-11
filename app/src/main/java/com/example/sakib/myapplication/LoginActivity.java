@@ -168,14 +168,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 Log.d(TAG, "facebook:onSuccess:" + loginResult);
                 Toast.makeText(LoginActivity.this, "facebook login successful...", Toast.LENGTH_SHORT).show();
                 handleFacebookAccessToken(loginResult.getAccessToken());
-            //    SendUserToMainActivity();
+                //    SendUserToMainActivity();
 
             }
 
             @Override
             public void onCancel() {
                 Log.d(TAG, "facebook:onCancel");
-            //    SendUserToLoginActivity();
+                //    SendUserToLoginActivity();
 
                 // ...
             }
@@ -183,7 +183,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onError(FacebookException error) {
                 Log.d(TAG, "facebook:onError", error);
-              //  SendUserToLoginActivity();
+                //  SendUserToLoginActivity();
                 // ...
             }
         });
@@ -243,8 +243,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             System.out.println("baaaaaal");
                             FirebaseUser user = mAuth.getCurrentUser();
                             System.out.println(user.getDisplayName());
-
-                            SendUserToMainActivity(user);
+                            SendUserToMainActivity();
                         } else {
                             // If sign in fails, display a message to the user.
                             System.out.println("baalda hoise");
@@ -275,7 +274,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             SendUserToMainActivity();
-                           // updateUI(user);
+                            // updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(LoginActivity.this, "NO ACCESS FOR U BITCH...", Toast.LENGTH_SHORT).show();
@@ -540,10 +539,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
         }
     }
-    private void SendUserToMainActivity(FirebaseUser user)
+    private void SendUserToMainActivity()
     {
         Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-        System.out.println("main activity te"+ user.getDisplayName() + user.getEmail() + user.getUid() +user.getIdToken(true));
+        System.out.println("main activity te");
         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(mainIntent);
         finish();
