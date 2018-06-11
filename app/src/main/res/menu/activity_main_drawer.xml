@@ -5,19 +5,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/home_page"
             android:icon="@drawable/icons8_home_50"
             android:title="হোমপেজ" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/hog_profile"
             android:icon="@drawable/icons8_contacts_24"
             android:title="আপনার প্রোফাইল" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/recharge"
             android:icon="@drawable/icons8_box_filled_50"
             android:title="রিচার্জ করুন" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/fook_notice"
             android:icon="@drawable/icons8_classroom_filled_50"
             android:title="নোটিশ বোর্ড" />
     </group>
@@ -25,11 +25,11 @@
     <item android:title="">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/goga"
                 android:icon="@drawable/icons8_about_filled_50"
                 android:title="আমাদের সম্পর্কে" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/logout_shit"
                 android:icon="@drawable/icons8_shutdown_filled_50"
                 android:title="লগআউট" />
         </menu>

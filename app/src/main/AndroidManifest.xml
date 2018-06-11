@@ -106,6 +106,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".MediDentalPreviousActivity" />
+        <activity android:name=".PaymentActivity" />
     </application>
 
 </manifest>

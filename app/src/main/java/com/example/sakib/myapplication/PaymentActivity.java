@@ -22,9 +22,9 @@ import com.sslcommerz.library.payment.Util.Model.ShippingFieldModel;
 public class PaymentActivity extends AppCompatActivity {
     TextView tv1,tv2;
     /*Mandatory Field*/
-  //  MandatoryFieldModel mandatoryFieldModel = new MandatoryFieldModel("testbox","qwerty","10", "1012", CurrencyType.BDT, SdkType.TESTBOX, SdkCategory.BANK_LIST);
+    MandatoryFieldModel mandatoryFieldModel = new MandatoryFieldModel("missi5b1bf9e7c190f","missi5b1bf9e7c190f@ssl","10", "1012", CurrencyType.BDT, SdkType.TESTBOX, SdkCategory.BANK_LIST);
     /*Mandatory Field For Specific Bank Page*/
-    MandatoryFieldModel mandatoryFieldModel = new MandatoryFieldModel("missi5b1bf9e7c190f","missi5b1bf9e7c190f@ssl","10", "1012", CurrencyType.BDT, SdkType.TESTBOX, SdkCategory.BANK_PAGE, BankName.DBBL_VISA);
+ //   MandatoryFieldModel mandatoryFieldModel = new MandatoryFieldModel("missi5b1bf9e7c190f","missi5b1bf9e7c190f@ssl","10", "1012", CurrencyType.BDT, SdkType.TESTBOX, SdkCategory.BANK_PAGE, BankName.DBBL_VISA);
 
     /*Optional Fields*/
     CustomerFieldModel customerFieldModel = new CustomerFieldModel("Customer Name","Customer Email Address", "Customer Address 1", "Customer Address 2", "Customer City", "Customer State", "Customer Post Code", "Customer Country", " Customer Phone", "Customer Fax");
@@ -45,7 +45,7 @@ public class PaymentActivity extends AppCompatActivity {
         tv1=(TextView) findViewById(R.id.textView);
         tv1.setText("Payment");
         tv2=(TextView) findViewById(R.id.textView_notice);
-        tv2.setText("Make sure you're connected to internet.");
+        tv2.setText("Make sure you're connected to internet. If you're connected and did everything fine then check profile balance");
 
         /*Call for the PaymentActivity*/
         PayUsingSSLCommerz.getInstance().setData(this,mandatoryFieldModel,customerFieldModel,shippingFieldModel,additionalFieldModel,new OnPaymentResultListener() {
