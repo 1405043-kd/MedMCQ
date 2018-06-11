@@ -109,8 +109,10 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String chapterName=(String) adapterView.getItemAtPosition(i);
-                Toast.makeText(MediDentalPreviousActivity.this,chapterName, Toast.LENGTH_SHORT).show();
+
                 String apiStr=subName+"/"+chapterName;
+                Toast.makeText(MediDentalPreviousActivity.this, apiStr, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MediDentalPreviousActivity.this,chapterName, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MediDentalPreviousActivity.this, ChapterQuestionActivity.class);
                 intent.putExtra("apiStr",apiStr);
                 startActivity(intent);
@@ -118,5 +120,6 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
         });
 
     }
+
 
 }

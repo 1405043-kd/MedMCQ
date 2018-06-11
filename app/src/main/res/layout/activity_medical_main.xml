@@ -40,7 +40,7 @@
             android:padding="8dp"
             android:text="@string/exam_notice"
             android:textColor="@android:color/black"
-            android:background="#ffcc66"
+            android:background="#f6ffd5"
             />
 
         <Button
@@ -53,7 +53,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#002080"
+            android:background="#3c4c00"
             android:layout_gravity="center"/>
 
         <Button
@@ -66,7 +66,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#330000"
+            android:background="#506000"
             android:layout_gravity="center" />
 
         <Button
@@ -79,7 +79,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#696969"
+            android:background="#6d7e00"
             android:layout_gravity="center" />
         <Button
             android:id="@+id/button_sub"
@@ -91,7 +91,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#ff33cc"
+            android:background="#879733"
             android:layout_gravity="center" />
 
         <Button
@@ -104,7 +104,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#e6b800"
+            android:background="#a3ad74"
             android:layout_gravity="center"/>
 
         <Button
@@ -117,7 +117,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#b30000"
+            android:background="#b1b79b"
             android:layout_gravity="center"
             android:layout_marginBottom="32dp"/>
 

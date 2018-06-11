@@ -194,7 +194,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             System.out.println("baaaaaal");
                             FirebaseUser user = mAuth.getCurrentUser();
                             System.out.println(user.getDisplayName());
-                            SendUserToMainActivity();
+
+                            SendUserToMainActivity(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             System.out.println("baalda hoise");
@@ -462,10 +463,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
         }
     }
-    private void SendUserToMainActivity()
+    private void SendUserToMainActivity(FirebaseUser user)
     {
         Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-        System.out.println("main activity te");
+        System.out.println("main activity te"+ user.getDisplayName() + user.getEmail() + user.getUid() +user.getIdToken(true));
         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(mainIntent);
         finish();

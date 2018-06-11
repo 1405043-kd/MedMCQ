@@ -1,12 +1,33 @@
 package com.example.sakib.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 import com.example.sakib.myapplication.models.Adapters.ChapterAdapter;
 
@@ -27,6 +48,13 @@ public class ChapterActivity extends AppCompatActivity{
     private List<String> chapterListgKnow=new ArrayList<>();
     private List<String> chapterListenglish=new ArrayList<>();
 
+    PopupWindow popupWindow;
+    Button buttonPopupExam;
+    Button buttonPopupSeeQstn;
+    LinearLayout linearLayout1;
+    LinearLayout linearPopup;
+    TextView textViewPopup;
+    boolean click=true;
 
 
     @Override
@@ -174,15 +202,112 @@ public class ChapterActivity extends AppCompatActivity{
         listView.setOnItemClickListener(new ListView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String chapterName=(String) adapterView.getItemAtPosition(i);
-                Toast.makeText(ChapterActivity.this,chapterName, Toast.LENGTH_SHORT).show();
-                String apiStr=subName+"/"+chapterName;
-                Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
-                intent.putExtra("apiStr",apiStr);
-                startActivity(intent);
+//                String chapterName=(String) adapterView.getItemAtPosition(i);
+//                Toast.makeText(ChapterActivity.this,chapterName, Toast.LENGTH_SHORT).show();
+//                String apiStr=subName+"/"+chapterName;
+//                Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
+//                intent.putExtra("apiStr",apiStr);
+//                startActivity(intent);
+
+                String chapterName = (String) adapterView.getItemAtPosition(i);
+                String apiStr= chapterName + " অধ্যায় থেকে ৫০ টি প্রশ্ন দিয়ে পরীক্ষা দিন। পরীক্ষাটি দিতে হলে আপনার একাউন্ট থেকে ৫ টাকা কেটে নেয়া " +
+                        "হবে।";
+
+                //instantiate the popup.xml layout file
+                LayoutInflater layoutInflater = (LayoutInflater) ChapterActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View customView =layoutInflater.inflate(R.layout.popup_chapter_exam,null);
+                buttonPopupExam = (Button) customView.findViewById(R.id.buttonPopupExam);
+                buttonPopupSeeQstn = (Button) customView.findViewById(R.id.buttonPopupSeeQstn);
+                linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
+                textViewPopup = (TextView) customView.findViewById(R.id.textViewPopup);
+                linearPopup =(LinearLayout) customView.findViewById(R.id.linearPopup);
+                linearPopup.setBackgroundColor(Color.parseColor("#2D2419"));
+                textViewPopup.setText(apiStr);
+
+                //initiate popupWindow
+
+                popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
+                // display the popup window
+                popupWindow.showAtLocation(linearLayout1, Gravity.CENTER, 0, 0);
+                // popupWindow.setOutsideTouchable(true);
+                popupWindow.update();
+
+                buttonPopupExam.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+                buttonPopupSeeQstn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
             }
         });
 
     }
 
 }
+
+
+
+
+//package com.popupwindow;
+//
+//import android.content.Context;
+//import android.support.v7.app.AppCompatActivity;
+//import android.os.Bundle;
+//import android.view.Gravity;
+//import android.view.LayoutInflater;
+//import android.view.View;
+//import android.view.ViewGroup.LayoutParams;
+//import android.widget.Button;
+//import android.widget.LinearLayout;
+//import android.widget.PopupWindow;
+//
+//public class MainActivity extends AppCompatActivity {
+//    Button showPopupBtn, closePopupBtn;
+//    PopupWindow popupWindow;
+//    LinearLayout linearLayout1;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//
+//        showPopupBtn = (Button) findViewById(R.id.showPopupBtn);
+//        linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
+//
+//        showPopupBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //instantiate the popup.xml layout file
+//                LayoutInflater layoutInflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//                View customView = layoutInflater.inflate(R.layout.popup,null);
+//
+//                closePopupBtn = (Button) customView.findViewById(R.id.closePopupBtn);
+//
+//                //instantiate popup window
+//                popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+//
+//                //display the popup window
+//                popupWindow.showAtLocation(linearLayout1, Gravity.CENTER, 0, 0);
+//
+//                //close the popup window on button click
+//                closePopupBtn.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        popupWindow.dismiss();
+//                    }
+//                });
+//
+//            }
+//        });
+//    }
+//}

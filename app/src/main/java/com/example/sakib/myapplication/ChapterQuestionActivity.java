@@ -49,14 +49,22 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         questionList = (ListView) findViewById(R.id.question_pagination_list);
 
         final Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.104:8000/")
+                .baseUrl("http://missiondmc.ml/")
                 //    .baseUrl("https://api.github.com/")
                 .addConverterFactory(GsonConverterFactory.create());
 
         Retrofit retrofit = builder.build();
         QuestionClient questionClient = retrofit.create(QuestionClient.class);
 
-        Call<List<Questions>> call_cq =questionClient.cqAll();
+
+        if(apiStr.contains("med")|| apiStr.contains("den")){
+            apiStr=returnUrlX(apiStr);
+        }
+        String[] parts = apiStr.split("/");
+        String part1 = parts[0]; // 004
+        String part2 = parts[1]; // 034556
+
+        Call<List<Questions>> call_cq =questionClient.xqYearMVD(parts[0],parts[1]);
 
         buttonSubmit = (Button) findViewById(R.id.subBut);
 
@@ -137,7 +145,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
     public void sendExamHistory(ExamHistory ehisotry){
         Retrofit.Builder builder2 = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.104:8000/")
+                .baseUrl("http://missiondmc.ml/")
                 //    .baseUrl("https://api.github.com/")
                 .addConverterFactory(GsonConverterFactory.create());
 
@@ -161,11 +169,118 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
     }
 
-    private void launchactivityResult(Bundle bundle)
-    {
+    private void launchactivityResult(Bundle bundle) {
         Intent intent = new Intent(this, ResultActivity.class);
        // intent.putExtra("Result",valueA);
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
+
+    private String returnUrlX(String s) {
+        if (s.contains("med")) {
+            if (s.contains("২০১৬-২০১৭"))
+                return "2016/M";
+            else if (s.contains("২০১৫-২০১৬")) {
+                return "2015/M";
+            } else if (s.contains("২০১৪-২০১৫")) {
+                return "2014/M";
+            } else if (s.contains("২০১৩-২০১৪")) {
+                return "2013/M";
+            } else if (s.contains("২০১২-২০১৩")) {
+                return "2012/M";
+            } else if (s.contains("২০১১-২০১২")) {
+                return "2011/M";
+            } else if (s.contains("২০১০-২০১১")) {
+                return "2010/M";
+            } else if (s.contains("২০০৯-২০১০")) {
+                return "2009/M";
+            } else if (s.contains("২০০৮-২০০৯")) {
+                return "2008/M";
+            } else if (s.contains("২০০৭-২০০৮")) {
+                return "2007/M";
+            } else if (s.contains("২০০৬-২০০৭")) {
+                return "2006/M";
+            } else if (s.contains("২০০৫-২০০৬")) {
+                return "2005/M";
+            } else if (s.contains("২০০৪-২০০৫")) {
+                return "2004/M";
+            } else if (s.contains("২০০৩-২০০৪")) {
+                return "2003/M";
+            } else if (s.contains("২০০২-২০০৩")) {
+                return "2002/M";
+            } else if (s.contains("২০০১-২০০২")) {
+                return "2001/M";
+            } else if (s.contains("২০০০-২০০১")) {
+                return "2000/M";
+            } else if (s.contains("১৯৯৯-২০০০")) {
+                return "1999/M";
+            } else if (s.contains("১৯৯৮-১৯৯৯")) {
+                return "1998/M";
+            } else if (s.contains("১৯৯৭-১৯৯৮")) {
+                return "1997/M";
+            } else if (s.contains("১৯৯৬-১৯৯৭")) {
+                return "1996/M";
+            } else if (s.contains("১৯৯৫-১৯৯৬")) {
+                return "1995/M";
+            } else if (s.contains("১৯৯৪-১৯৯৫")) {
+                return "1994/M";
+            } else if (s.contains("১৯৯৩-১৯৯৪")) {
+                return "1993/M";
+            } else if (s.contains("১৯৯২-১৯৯৩")) {
+                return "1992/M";
+            } else if (s.contains("১৯৯১-১৯৯২")) {
+                return "1991/M";
+            } else if (s.contains("১৯৯০-১৯৯১")) {
+                return "1990/M";
+            } else if (s.contains("১৯৮৯-১৯৯০")) {
+                return "1989/M";
+            } else if (s.contains("১৯৮৮-১৯৮৯")) {
+                return "1988/M";
+            }
+
+        } else if (s.contains("den")) {
+            if (s.contains("২০১৬-২০১৭"))
+                return "2016/D";
+            else if (s.contains("২০১০-২০১১")) {
+                return "2010/D";
+            } else if (s.contains("২০০৯-২০১০")) {
+                return "2009/D";
+            } else if (s.contains("২০০৮-২০০৯")) {
+                return "2008/D";
+            } else if (s.contains("২০০৭-২০০৮")) {
+                return "2007/D";
+            } else if (s.contains("২০০৬-২০০৭")) {
+                return "2006/D";
+            } else if (s.contains("২০০৫-২০০৬")) {
+                return "2005/D";
+            } else if (s.contains("২০০৪-২০০৫")) {
+                return "2004/D";
+            } else if (s.contains("২০০৩-২০০৪")) {
+                return "2003/D";
+            } else if (s.contains("২০০২-২০০৩")) {
+                return "2002/D";
+            } else if (s.contains("২০০১-২০০২")) {
+                return "2001/D";
+            } else if (s.contains("২০০০-২০০১")) {
+                return "2000/D";
+            } else if (s.contains("১৯৯৯-২০০০")) {
+                return "1999/D";
+            } else if (s.contains("১৯৯৮-১৯৯৯")) {
+                return "1998/D";
+            } else if (s.contains("১৯৯৭-১৯৯৮")) {
+                return "1997/D";
+            } else if (s.contains("১৯৯৬-১৯৯৭")) {
+                return "1996/D";
+            } else if (s.contains("১৯৯৫-১৯৯৬")) {
+                return "1995/D";
+            }
+
+
+        }
+        return "";
+    }
+
+
+
 }
