@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.sslcommerz.library.payment.Classes.PayUsingSSLCommerz;
 import com.sslcommerz.library.payment.Listener.OnPaymentResultListener;
 import com.sslcommerz.library.payment.Util.ConstantData.BankName;
@@ -21,13 +23,15 @@ import com.sslcommerz.library.payment.Util.Model.ShippingFieldModel;
 
 public class PaymentActivity extends AppCompatActivity {
     TextView tv1,tv2;
+
+
     /*Mandatory Field*/
-    MandatoryFieldModel mandatoryFieldModel = new MandatoryFieldModel("missi5b1bf9e7c190f","missi5b1bf9e7c190f@ssl","10", "1012", CurrencyType.BDT, SdkType.TESTBOX, SdkCategory.BANK_LIST);
+    MandatoryFieldModel mandatoryFieldModel;
     /*Mandatory Field For Specific Bank Page*/
  //   MandatoryFieldModel mandatoryFieldModel = new MandatoryFieldModel("missi5b1bf9e7c190f","missi5b1bf9e7c190f@ssl","10", "1012", CurrencyType.BDT, SdkType.TESTBOX, SdkCategory.BANK_PAGE, BankName.DBBL_VISA);
 
     /*Optional Fields*/
-    CustomerFieldModel customerFieldModel = new CustomerFieldModel("Customer Name","Customer Email Address", "Customer Address 1", "Customer Address 2", "Customer City", "Customer State", "Customer Post Code", "Customer Country", " Customer Phone", "Customer Fax");
+    CustomerFieldModel customerFieldModel;
     ShippingFieldModel shippingFieldModel = new ShippingFieldModel("Shipping Name", "Shipping Address 1","Shipping Address 2","Shipping City", "Shipping State", "Shipping Post Code", "Shipping Country" );
 
     AdditionalFieldModel additionalFieldModel = new AdditionalFieldModel();
@@ -46,6 +50,14 @@ public class PaymentActivity extends AppCompatActivity {
         tv1.setText("Payment");
         tv2=(TextView) findViewById(R.id.textView_notice);
         tv2.setText("Make sure you're connected to internet. If you're connected and did everything fine then check profile balance");
+
+        //findCurrentUserCredentials From Firebase
+
+        FirebaseAuth mAuth;
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        mandatoryFieldModel = new MandatoryFieldModel("missi5b1bf9e7c190f","missi5b1bf9e7c190f@ssl","10", user.getUid(), CurrencyType.BDT, SdkType.TESTBOX, SdkCategory.BANK_LIST);
+        customerFieldModel = new CustomerFieldModel(user.getDisplayName(), user.getEmail(), "Customer Address 1", "Customer Address 2", "Customer City", "Customer State", "Customer Post Code", "Customer Country", " Customer Phone", "Customer Fax");
 
         /*Call for the PaymentActivity*/
         PayUsingSSLCommerz.getInstance().setData(this,mandatoryFieldModel,customerFieldModel,shippingFieldModel,additionalFieldModel,new OnPaymentResultListener() {

@@ -3,7 +3,7 @@ package com.example.sakib.myapplication.models;
 public class Users {
     private String UserID;
     private String Name;
-    private String ProviderID;
+    private String Provider_Name;
     private String Email;
     private Float Balance;
 
@@ -16,7 +16,7 @@ public class Users {
     }
 
     public void setProviderID(String idToken) {
-        ProviderID = idToken;
+        Provider_Name = idToken;
     }
 
     public void setEmail(String email) {
@@ -37,7 +37,7 @@ public class Users {
     }
 
     public String getProviderID() {
-        return ProviderID;
+        return Provider_Name;
     }
 
     public String getEmail() {

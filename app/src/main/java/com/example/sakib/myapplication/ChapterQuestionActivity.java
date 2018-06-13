@@ -14,6 +14,8 @@ import com.example.sakib.myapplication.models.Adapters.QuestionAdapter;
 import com.example.sakib.myapplication.models.ExamHistory;
 import com.example.sakib.myapplication.models.QuestionClient;
 import com.example.sakib.myapplication.models.Questions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
@@ -118,7 +120,12 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                             }
                         }
 
-                        ExamHistory examHistory= new ExamHistory(1,questions.get(0).getQuestionId(),"C", total);
+                        FirebaseAuth mAuth;
+                        mAuth = FirebaseAuth.getInstance();
+                        FirebaseUser user = mAuth.getCurrentUser();
+
+
+                        ExamHistory examHistory= new ExamHistory(user.getUid(),questions.get(0).getQuestionId(),"C", total);
                         sendExamHistory(examHistory);
 
                         Toast.makeText(ChapterQuestionActivity.this, Float.toString(total), Toast.LENGTH_SHORT).show();

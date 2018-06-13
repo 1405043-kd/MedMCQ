@@ -40,7 +40,7 @@ public interface QuestionClient {
     @POST("/e_history/")
     Call<ExamHistory> post_e_history(@Body ExamHistory examHistory);
 
-    @POST("/profile/")
+    @POST("/profile_mod/")
     Call<Users> post_users(@Body Users users);
 
 }

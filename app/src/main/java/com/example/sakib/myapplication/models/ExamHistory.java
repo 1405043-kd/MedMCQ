@@ -2,23 +2,23 @@ package com.example.sakib.myapplication.models;
 
 public class ExamHistory {
 
-    private int UserId;
+    private String UserId;
     private int QuestionId;
     private String TableName;
-    private float marks;
-    private int position;
+    private float Marks;
+    private int Position;
 
     public ExamHistory() {
     }
 
-    public ExamHistory(int userId, int questionId, String tableName, float marks) {
+    public ExamHistory(String userId, int questionId, String tableName, float marks) {
         this.UserId = userId;
         this.QuestionId = questionId;
         this.TableName = tableName;
-        this.marks = marks;
+        this.Marks = marks;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return UserId;
     }
 
@@ -31,11 +31,11 @@ public class ExamHistory {
     }
 
     public float getMarks() {
-        return marks;
+        return Marks;
     }
 
     public int getPosition() {
-        return position;
+        return Position;
     }
 
 
