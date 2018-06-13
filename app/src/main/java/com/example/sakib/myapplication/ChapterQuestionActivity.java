@@ -84,6 +84,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Questions questions=(Questions) adapterView.getItemAtPosition(i);
 
+
                   //      Toast.makeText(ChapterQuestionActivity.this, questions.getQuestion(), Toast.LENGTH_SHORT).show();
 
                     }
@@ -102,11 +103,12 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                         {
 
                             System.out.println(questions.size()+" ybo "+answers.length);
-                            String ans= "";
+                            String ans= answers[ii];
+                            System.out.println("wohowo"+Integer.toString(ii+1)+ans+"wohowo"+questions.get(ii).getCorrectAns());
 //                            answers[ii]=answers[ii]+"( haha )"+ "lol(DE)";
-                            if(answers[ii]!=null) {
-                                ans = answers[ii].substring(answers[ii].indexOf("(") + 1, answers[ii].indexOf(")"));
-                                answers[ii]=ans;
+                            if(ans!=null) {
+                                //ans = answers[ii].substring(answers[ii].indexOf("(") + 1, answers[ii].indexOf(")"));
+                                //answers[ii]=ans;
                                 Toast.makeText(ChapterQuestionActivity.this, ans, Toast.LENGTH_SHORT).show();
                                 if (questions.get(ii).getCorrectAns().contains(ans))
                                     total += 1;
@@ -129,7 +131,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                         bundle.putStringArray("ans",answers);
                         bundle.putFloat("res",total);
 
-                        launchactivityResult(bundle);
+                        launchActivityResult(bundle);
                     }
                 });
 
@@ -169,7 +171,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
     }
 
-    private void launchactivityResult(Bundle bundle) {
+    private void launchActivityResult(Bundle bundle) {
         Intent intent = new Intent(this, ResultActivity.class);
        // intent.putExtra("Result",valueA);
         intent.putExtras(bundle);

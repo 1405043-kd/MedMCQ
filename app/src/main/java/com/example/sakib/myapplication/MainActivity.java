@@ -16,6 +16,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
+import com.example.sakib.myapplication.models.ExamHistory;
+import com.example.sakib.myapplication.models.QuestionClient;
+import com.example.sakib.myapplication.models.Users;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -51,6 +64,10 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        UserDataSendToServer();
+
+
         cardView_medi = (CardView) findViewById(R.id.card_view1);
         cardView_varsity = (CardView) findViewById(R.id.card_view2);
         cardView_notice = (CardView) findViewById(R.id.card_view3);
@@ -76,6 +93,44 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
 
                 launchActivity_notice();
+            }
+        });
+
+
+    }
+    private void UserDataSendToServer(){
+        FirebaseAuth mAuth;
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        Toast.makeText(MainActivity.this, user.getDisplayName(), Toast.LENGTH_SHORT).show();
+        System.out.println("FIreBase theke ja pai"+user.getIdToken(true)+user.getPhoneNumber()+user.getUid()+user.getEmail());
+
+        Users usertoSend= new Users();
+        usertoSend.setEmail(user.getEmail());
+        usertoSend.setProviderID(user.getProviderId());
+        usertoSend.setName(user.getDisplayName());
+        usertoSend.setUserID(user.getUid());
+
+
+        Retrofit.Builder builder2 = new Retrofit.Builder()
+                .baseUrl("http://missiondmc.ml/")
+                //    .baseUrl("https://api.github.com/")
+                .addConverterFactory(GsonConverterFactory.create());
+
+        Retrofit retrofit2 = builder2.build();
+        QuestionClient eClient = retrofit2.create(QuestionClient.class);
+        Call<Users> call= eClient.post_users(usertoSend);
+
+        call.enqueue(new Callback<Users>() {
+            @Override
+            public void onResponse(Call<Users> call, Response<Users> response) {
+                Toast.makeText(MainActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+                System.out.print("FUFU"+ response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Users> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -140,6 +195,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.goga) {
 
         } else if (id == R.id.recharge) {
+
             Intent intent = new Intent(MainActivity.this, PaymentActivity.class);
             startActivity(intent);
 

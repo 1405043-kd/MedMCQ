@@ -26,34 +26,34 @@
         <RadioGroup
             android:id="@+id/radio_group"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1" >
 
             <RadioButton
                 android:id="@+id/option1radio"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton" />
 
             <RadioButton
                 android:id="@+id/option2radio"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton" />
 
             <RadioButton
                 android:id="@+id/option3radio"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton" />
 
             <RadioButton
                 android:id="@+id/option4radio"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton" />
         </RadioGroup>
