@@ -70,7 +70,7 @@ public class ChapterActivity extends AppCompatActivity{
         chapterListView = (ListView) findViewById(R.id.chapter_pagination_list);
 
         chapterListbio1= Arrays.asList(
-                "কোষ ও কোষের গঠণ",
+                "কোষ ও কোষের গঠন",
                 "কোষ বিভাজন",
                 "কোষ রসায়ন",
                 "অণুজীব",
@@ -81,7 +81,7 @@ public class ChapterActivity extends AppCompatActivity{
                 "জীবপ্রযুক্তি",
                 "উদ্ভিদের প্রজনন",
                 "উদ্ভিদের শারীরতত্ত্ব",
-                "জীবের পরিবেশ,বিস্তার ও সংরক্ষণ"
+                "জীবের পরিবেশ, বিস্তার ও সংরক্ষণ"
         );
 
         chapterListbio2 = Arrays.asList(
@@ -161,33 +161,33 @@ public class ChapterActivity extends AppCompatActivity{
         );
 
         chapterListenglish = Arrays.asList(
-                "Prepositions",
-                "Phrase and Idioms",
+                "Preposition",
+                "Phrase & Idioms",
                 "Voice",
                 "Narration",
                 "Transformation",
-                "Synonym",
+                "Synonyms",
                 "Antonym",
-                "Proverb and Translation",
-                "Right form of verbs",
+                "Translation",
+                "Re-writes",
                 "Spelling"
         );
 
-        if(subName.contains("bioOne")){
+        if(subName.contains("Bio1")){
             adapterSetter(chapterListView,chapterListbio1,subName);
-        }else if(subName.contains("bioTwo")){
+        }else if(subName.contains("Bio2")){
             adapterSetter(chapterListView,chapterListbio2,subName);
-        }else if(subName.contains("chemOne")){
+        }else if(subName.contains("Ch1")){
             adapterSetter(chapterListView,chapterListchem1,subName);
-        }else if(subName.contains("chemTwo")){
+        }else if(subName.contains("Ch2")){
             adapterSetter(chapterListView,chapterListchem2,subName);
-        }else if(subName.contains("phyOne")){
+        }else if(subName.contains("Ph1")){
             adapterSetter(chapterListView,chapterListphy1,subName);
-        }else if(subName.contains("phyTwo")){
+        }else if(subName.contains("Ph2")){
             adapterSetter(chapterListView,chapterListphy2,subName);
         }else if(subName.contains("gKnow")){
             adapterSetter(chapterListView,chapterListgKnow,subName);
-        }else if(subName.contains("english")){
+        }else if(subName.contains("English")){
             adapterSetter(chapterListView,chapterListenglish,subName);
         }
 
@@ -213,6 +213,10 @@ public class ChapterActivity extends AppCompatActivity{
                 String apiStr= chapterName + " অধ্যায় থেকে ৫০ টি প্রশ্ন দিয়ে পরীক্ষা দিন। পরীক্ষাটি দিতে হলে আপনার একাউন্ট থেকে ৫ টাকা কেটে নেয়া " +
                         "হবে।";
 
+
+                final String toSendString=subName+"/"+chapterName;
+
+
                 //instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) ChapterActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView =layoutInflater.inflate(R.layout.popup_chapter_exam,null);
@@ -236,6 +240,7 @@ public class ChapterActivity extends AppCompatActivity{
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
+                        intent.putExtra("apiStr",toSendString);
                         startActivity(intent);
                     }
                 });
@@ -244,6 +249,7 @@ public class ChapterActivity extends AppCompatActivity{
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
+                        intent.putExtra("apiStr",toSendString);
                         startActivity(intent);
                     }
                 });

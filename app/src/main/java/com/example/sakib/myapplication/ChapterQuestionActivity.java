@@ -58,6 +58,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         Retrofit retrofit = builder.build();
         QuestionClient questionClient = retrofit.create(QuestionClient.class);
 
+        Call<List<Questions>> call_cq;
 
         if(apiStr.contains("med")|| apiStr.contains("den")){
             apiStr=returnUrlX(apiStr);
@@ -66,7 +67,13 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         String part1 = parts[0]; // 004
         String part2 = parts[1]; // 034556
 
-        Call<List<Questions>> call_cq =questionClient.xqYearMVD(parts[0],parts[1]);
+        if(part1.contains("Bio1")||part1.contains("Bio2")||part1.contains("Ph1")||part1.contains("Ph2")||part1.contains("Cb1")
+                ||part1.contains("Ch2")||part1.contains("gKnow")||part1.contains("English")) {
+            call_cq = questionClient.cqSubChap(part1, part2);
+        }
+        else {
+            call_cq =questionClient.xqYearMVD(part1,part2);
+        }
 
         buttonSubmit = (Button) findViewById(R.id.subBut);
 

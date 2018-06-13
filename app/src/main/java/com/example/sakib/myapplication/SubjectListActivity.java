@@ -38,7 +38,7 @@ public class SubjectListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                launchSubWiseChapterList("bioOne");
+                launchSubWiseChapterList("Bio1");
             }
         });
 
@@ -46,7 +46,7 @@ public class SubjectListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                launchSubWiseChapterList("bioTwo");
+                launchSubWiseChapterList("Bio2");
             }
         });
 
@@ -54,7 +54,7 @@ public class SubjectListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                launchSubWiseChapterList("chemOne");
+                launchSubWiseChapterList("Ch1");
             }
         });
 
@@ -62,7 +62,7 @@ public class SubjectListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                launchSubWiseChapterList("chemTwo");
+                launchSubWiseChapterList("Ch2");
             }
         });
 
@@ -70,21 +70,21 @@ public class SubjectListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                launchSubWiseChapterList("phyOne");
+                launchSubWiseChapterList("Ph1");
             }
         });
         phyTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                launchSubWiseChapterList("phyTwo");
+                launchSubWiseChapterList("Ph2");
             }
         });
         english.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                launchSubWiseChapterList("english");
+                launchSubWiseChapterList("English");
             }
         });
         gKnow.setOnClickListener(new View.OnClickListener() {
