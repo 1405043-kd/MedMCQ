@@ -36,7 +36,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import static android.os.Build.VERSION_CODES.M;
 
 public class ChapterQuestionActivity extends AppCompatActivity {
-    private static final long START_TIME_IN_MILLIS = 600;
+    private static final long START_TIME_IN_MILLIS = 6000;
     private TextView mTextViewCountDown;
     private static CountDownTimer mCountDownTimer;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
