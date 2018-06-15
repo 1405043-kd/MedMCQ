@@ -112,13 +112,15 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                     }
                 });
 
-                startTimer();
+                startTimer(100);
 
 
 
                 buttonSubmit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        mCountDownTimer.cancel();
 
                         float total=0;
 
@@ -312,8 +314,8 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         return "";
     }
 
-    private void startTimer() {
-        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+    private void startTimer(int timeToCount) {
+        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, timeToCount) {
             @Override
             public void onTick(long millisUntilFinished) {
                 mTimeLeftInMillis = millisUntilFinished;
