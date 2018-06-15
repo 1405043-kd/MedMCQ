@@ -1,13 +1,17 @@
 package com.example.sakib.myapplication;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sakib.myapplication.models.Adapters.QuestionAdapter;
@@ -21,6 +25,7 @@ import com.google.gson.Gson;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,6 +36,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import static android.os.Build.VERSION_CODES.M;
 
 public class ChapterQuestionActivity extends AppCompatActivity {
+    private static final long START_TIME_IN_MILLIS = 600000;
+    private TextView mTextViewCountDown;
+    private static CountDownTimer mCountDownTimer;
+    private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
+    ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 300);
+
+
     String apiStr="";
     ListView questionList;
     Button buttonSubmit;
@@ -49,6 +61,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
  //       Toast.makeText(ChapterQuestionActivity.this,apiStr, Toast.LENGTH_SHORT).show();
 
         questionList = (ListView) findViewById(R.id.question_pagination_list);
+        mTextViewCountDown = (TextView) findViewById(R.id.text_view_countdown);
 
         final Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl("http://missiondmc.ml/")
@@ -98,6 +111,8 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
                     }
                 });
+
+                startTimer();
 
 
 
@@ -296,6 +311,34 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         }
         return "";
     }
+
+    private void startTimer() {
+        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mTimeLeftInMillis = millisUntilFinished;
+                Toast.makeText(ChapterQuestionActivity.this, "start"+mTimeLeftInMillis, Toast.LENGTH_SHORT).show();
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                buttonSubmit.performClick();
+            }
+        }.start();
+
+    }
+
+    private void updateCountDownText() {
+        int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
+        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+
+        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        Toast.makeText(ChapterQuestionActivity.this, "asf"+timeLeftFormatted, Toast.LENGTH_SHORT).show();
+        mTextViewCountDown.setText(timeLeftFormatted);
+        toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
+    }
+
 
 
 
