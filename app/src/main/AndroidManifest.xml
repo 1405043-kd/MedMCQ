@@ -105,6 +105,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+        <activity
+            android:name=".ProfileActivity"
+            android:label="প্রোফাইল"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
         <activity android:name=".MediDentalPreviousActivity" />
         <activity android:name=".PaymentActivity" />
     </application>

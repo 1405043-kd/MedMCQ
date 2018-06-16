@@ -43,4 +43,7 @@ public interface QuestionClient {
     @POST("/profile_mod/")
     Call<Users> post_users(@Body Users users);
 
+    @GET("/profile_mod/{user_id}/")
+    Call<Users> get_user(@Path("user_id") String user_id);
+
 }
