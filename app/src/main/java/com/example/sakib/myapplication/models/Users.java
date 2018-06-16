@@ -1,11 +1,18 @@
 package com.example.sakib.myapplication.models;
 
 public class Users {
+    private String Provider_Name;
     private String UserID;
     private String Name;
-    private String Provider_Name;
     private String Email;
     private Float Balance;
+
+    public Users(){
+
+    }
+
+
+
 
     public void setUserID(String userID) {
         this.UserID = userID;

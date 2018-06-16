@@ -203,6 +203,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.hog_profile) {
 
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.logout_shit) {
 
         }
