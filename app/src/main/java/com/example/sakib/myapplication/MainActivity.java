@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         Toast.makeText(MainActivity.this, user.getDisplayName(), Toast.LENGTH_SHORT).show();
-        System.out.println("FIreBase theke ja pai"+user.getIdToken(true)+user.getPhoneNumber()+user.getUid()+user.getEmail());
+        System.out.println("FireBase theke ja pai"+user.getIdToken(true)+user.getPhoneNumber()+user.getUid()+user.getEmail());
 
         Users usertoSend= new Users();
         usertoSend.setEmail(user.getEmail());
