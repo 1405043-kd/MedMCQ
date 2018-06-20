@@ -38,6 +38,7 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
         chapterListView = (ListView) findViewById(R.id.chapter_pagination_list);
 
         mediYearList= Arrays.asList(
+                "সেশন ২০১৭-২০১৮",
                 "সেশন ২০১৬-২০১৭",
                 "সেশন ২০১৫-২০১৬",
                 "সেশন ২০১৪-২০১৫",
@@ -53,7 +54,6 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
                 "সেশন ২০০৪-২০০৫",
                 "সেশন ২০০৩-২০০৪",
                 "সেশন ২০০২-২০০৩",
-                "সেশন ২০০১-২০০২",
                 "সেশন ২০০০-২০০১",
                 "সেশন ১৯৯৯-২০০০",
                 "সেশন ১৯৯৮-১৯৯৯",
@@ -65,6 +65,7 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
                 "সেশন ১৯৯২-১৯৯৩",
                 "সেশন ১৯৯১-১৯৯২",
                 "সেশন ১৯৯০-১৯৯১",
+                "সেশন ১৯৯০-১৯৯১(১)",
                 "সেশন ১৯৮৯-১৯৯০",
                 "সেশন ১৯৮৮-১৯৮৯"
         );

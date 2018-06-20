@@ -36,7 +36,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import static android.os.Build.VERSION_CODES.M;
 
 public class ChapterQuestionActivity extends AppCompatActivity {
-    private static final long START_TIME_IN_MILLIS = 6000;
+    private static final long START_TIME_IN_MILLIS = 60000;
     private TextView mTextViewCountDown;
     private static CountDownTimer mCountDownTimer;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
@@ -80,7 +80,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         String part1 = parts[0]; // 004
         String part2 = parts[1]; // 034556
 
-        if(part1.contains("Bio1")||part1.contains("Bio2")||part1.contains("Ph1")||part1.contains("Ph2")||part1.contains("Cb1")
+        if(part1.contains("Bio1")||part1.contains("Bio2")||part1.contains("Ph1")||part1.contains("Ph2")||part1.contains("Ch1")
                 ||part1.contains("Ch2")||part1.contains("gKnow")||part1.contains("English")) {
             call_cq = questionClient.cqSubChap(part1, part2);
         }
@@ -214,7 +214,9 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         if (s.contains("med")) {
             if (s.contains("২০১৬-২০১৭"))
                 return "2016/M";
-            else if (s.contains("২০১৫-২০১৬")) {
+            else if (s.contains("২০১৭-২০১৮")) {
+                return "2017/M";
+            } else if (s.contains("২০১৫-২০১৬")) {
                 return "2015/M";
             } else if (s.contains("২০১৪-২০১৫")) {
                 return "2014/M";
@@ -266,6 +268,8 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                 return "1991/M";
             } else if (s.contains("১৯৯০-১৯৯১")) {
                 return "1990/M";
+            } else if (s.contains("১৯৯০-১৯৯১(১)")) {
+                return "1990-1/M";
             } else if (s.contains("১৯৮৯-১৯৯০")) {
                 return "1989/M";
             } else if (s.contains("১৯৮৮-১৯৮৯")) {
@@ -338,7 +342,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
         Toast.makeText(ChapterQuestionActivity.this, "asf"+timeLeftFormatted, Toast.LENGTH_SHORT).show();
         mTextViewCountDown.setText(timeLeftFormatted);
-        toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
+     //   toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
     }
 
 

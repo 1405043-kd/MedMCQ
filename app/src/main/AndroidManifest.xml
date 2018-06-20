@@ -94,10 +94,10 @@
         </activity>
         <activity
             android:name=".ChapterQuestionActivity"
-            android:label="অধ্যায়সমূহ" />
+            android:label="প্রশ্নপত্র" />
         <activity
             android:name=".PrevMedDenQuestionActivity"
-            android:label="অধ্যায়সমূহ"
+            android:label="প্রশ্নপত্র"
             android:parentActivityName=".MedicalMainActivity"
             android:theme="@style/AppTheme">
             <meta-data
