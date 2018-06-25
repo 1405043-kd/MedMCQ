@@ -9,6 +9,7 @@
     android:orientation="vertical"
     >
 
+
     <TextView
         android:id="@+id/text_view_countdown"
         android:layout_width="match_parent"
@@ -32,6 +33,17 @@
 
 
     </ListView>
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity = "center"
+        android:indeterminate="true"
+        android:indeterminateTint="@android:color/holo_green_light"/>
+
 
     <Button
         android:id="@+id/subBut"

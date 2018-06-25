@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
     private static CountDownTimer mCountDownTimer;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
     ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 300);
+    private ProgressBar spinner;
 
 
     String apiStr="";
@@ -53,6 +55,9 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter_question);
 
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.VISIBLE);
+
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             apiStr = extras.getString("apiStr");
@@ -62,6 +67,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
         questionList = (ListView) findViewById(R.id.question_pagination_list);
         mTextViewCountDown = (TextView) findViewById(R.id.text_view_countdown);
+        mTextViewCountDown.setVisibility(View.GONE);
 
         final Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl("http://missiondmc.ml/")
@@ -89,6 +95,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         }
 
         buttonSubmit = (Button) findViewById(R.id.subBut);
+        buttonSubmit.setVisibility(View.GONE);
 
         call_cq.enqueue(new Callback<List<Questions>>() {
             @Override
@@ -112,7 +119,12 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                     }
                 });
 
+                spinner.setVisibility(View.GONE);
+                buttonSubmit.setVisibility(View.VISIBLE);
+                mTextViewCountDown.setVisibility(View.VISIBLE);
+
                 startTimer();
+
 
 
 

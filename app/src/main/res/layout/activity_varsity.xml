@@ -40,7 +40,7 @@
             android:padding="8dp"
             android:text="@string/exam_notice"
             android:textColor="@android:color/black"
-            android:background="#ffcc66"
+            android:background="#f6ffd5"
             />
 
         <Button
@@ -53,7 +53,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#002080"
+            android:background="#4D561C"
             android:layout_gravity="center"/>
 
         <Button
@@ -66,21 +66,10 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#330000"
+            android:background="#606B24"
             android:layout_gravity="center" />
 
-        <Button
-            android:id="@+id/button_nextExam"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:layout_margin="8dp"
-            android:text="@string/next_exam"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:background="#696969"
-            android:layout_gravity="center" />
+
         <Button
             android:id="@+id/button_sub"
             android:layout_width="250dp"
@@ -91,7 +80,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#ff33cc"
+            android:background="#73802B"
             android:layout_gravity="center" />
 
         <Button
@@ -104,8 +93,21 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#e6b800"
+            android:background="#869632"
             android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/button_nextExam"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:text="@string/next_exam"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="#99AB39"
+            android:layout_gravity="center" />
 
 
 
