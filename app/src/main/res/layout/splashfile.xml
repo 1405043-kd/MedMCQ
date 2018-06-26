@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@color/blue">
+    android:background="#ffffff">
 
     <ImageView
         android:id="@+id/logo_id"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/logo96"
+        android:src="@drawable/logo_main"
         android:contentDescription="@string/app_name" />
 
     <TextView

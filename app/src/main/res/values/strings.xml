@@ -18,7 +18,7 @@
     <string name="exam_notice">Exam Notice</string>
     <string name="button_exam">পরীক্ষা দিন</string>
     <string name="button_archive">আর্কাইভ</string>
-    <string name="next_exam">পরবর্তী পরীক্ষা</string>
+    <string name="next_exam">লেকচার নোটস</string>
     <string name="last_medi_qstn">বিগত সালের মেডিকেল প্রশ্ন</string>
     <string name="dental_qstn">বিগত সালের ডেন্টাল প্রশ্ন</string>
     <string name="subject_prep">বিষয়ভিত্তিক প্রস্তুতি</string>

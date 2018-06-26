@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,11 +37,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import static android.os.Build.VERSION_CODES.M;
 
 public class ChapterQuestionActivity extends AppCompatActivity {
-    private static final long START_TIME_IN_MILLIS = 6000;
+    private static final long START_TIME_IN_MILLIS = 60000;
     private TextView mTextViewCountDown;
     private static CountDownTimer mCountDownTimer;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
     ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 300);
+    private ProgressBar spinner;
 
 
     String apiStr="";
@@ -53,6 +55,9 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter_question);
 
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.VISIBLE);
+
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             apiStr = extras.getString("apiStr");
@@ -62,6 +67,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
         questionList = (ListView) findViewById(R.id.question_pagination_list);
         mTextViewCountDown = (TextView) findViewById(R.id.text_view_countdown);
+        mTextViewCountDown.setVisibility(View.GONE);
 
         final Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl("http://missiondmc.ml/")
@@ -80,7 +86,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         String part1 = parts[0]; // 004
         String part2 = parts[1]; // 034556
 
-        if(part1.contains("Bio1")||part1.contains("Bio2")||part1.contains("Ph1")||part1.contains("Ph2")||part1.contains("Cb1")
+        if(part1.contains("Bio1")||part1.contains("Bio2")||part1.contains("Ph1")||part1.contains("Ph2")||part1.contains("Ch1")
                 ||part1.contains("Ch2")||part1.contains("gKnow")||part1.contains("English")) {
             call_cq = questionClient.cqSubChap(part1, part2);
         }
@@ -89,6 +95,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         }
 
         buttonSubmit = (Button) findViewById(R.id.subBut);
+        buttonSubmit.setVisibility(View.GONE);
 
         call_cq.enqueue(new Callback<List<Questions>>() {
             @Override
@@ -112,7 +119,12 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                     }
                 });
 
+                spinner.setVisibility(View.GONE);
+                buttonSubmit.setVisibility(View.VISIBLE);
+                mTextViewCountDown.setVisibility(View.VISIBLE);
+
                 startTimer();
+
 
 
 
@@ -214,7 +226,9 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         if (s.contains("med")) {
             if (s.contains("২০১৬-২০১৭"))
                 return "2016/M";
-            else if (s.contains("২০১৫-২০১৬")) {
+            else if (s.contains("২০১৭-২০১৮")) {
+                return "2017/M";
+            } else if (s.contains("২০১৫-২০১৬")) {
                 return "2015/M";
             } else if (s.contains("২০১৪-২০১৫")) {
                 return "2014/M";
@@ -266,6 +280,8 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                 return "1991/M";
             } else if (s.contains("১৯৯০-১৯৯১")) {
                 return "1990/M";
+            } else if (s.contains("১৯৯০-১৯৯১(১)")) {
+                return "1990-1/M";
             } else if (s.contains("১৯৮৯-১৯৯০")) {
                 return "1989/M";
             } else if (s.contains("১৯৮৮-১৯৮৯")) {
@@ -338,7 +354,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
         Toast.makeText(ChapterQuestionActivity.this, "asf"+timeLeftFormatted, Toast.LENGTH_SHORT).show();
         mTextViewCountDown.setText(timeLeftFormatted);
-        toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
+     //   toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
     }
 
 

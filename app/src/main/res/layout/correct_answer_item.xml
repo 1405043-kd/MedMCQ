@@ -15,17 +15,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@+id/label"
-            android:textSize="18sp"
+            android:textSize="21sp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            android:textColor="#1034A6">
 
         </TextView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            android:layout_weight="1" >
+            android:orientation="vertical"
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/option1"
@@ -33,7 +34,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton"
-                android:textColor="@color/blue"/>
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:id="@+id/option2"
@@ -41,7 +45,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton"
-                android:textColor="@color/blue"/>
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:id="@+id/option3"
@@ -49,7 +56,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton"
-                android:textColor="@color/blue"/>
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:id="@+id/option4"
@@ -57,14 +67,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton"
-                android:textColor="@color/blue"/>
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
             <TextView
                 android:id="@+id/correctAnsw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton"
-                android:textColor="@color/green"/>
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="21sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
         </LinearLayout>
     </LinearLayout>
 

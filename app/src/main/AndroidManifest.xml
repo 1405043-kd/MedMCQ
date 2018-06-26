@@ -66,15 +66,6 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".NoticeActivity"
-            android:label="নোটিশ"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
             android:name=".SubjectListActivity"
             android:label="বিষয়সমূহ"
             android:parentActivityName=".MedicalMainActivity"
@@ -94,10 +85,10 @@
         </activity>
         <activity
             android:name=".ChapterQuestionActivity"
-            android:label="অধ্যায়সমূহ" />
+            android:label="প্রশ্নপত্র" />
         <activity
             android:name=".PrevMedDenQuestionActivity"
-            android:label="অধ্যায়সমূহ"
+            android:label="প্রশ্নপত্র"
             android:parentActivityName=".MedicalMainActivity"
             android:theme="@style/AppTheme">
             <meta-data
