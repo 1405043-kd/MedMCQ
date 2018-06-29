@@ -16,6 +16,9 @@ public interface QuestionClient {
     @GET("/c_q/{sub}/")
     Call<List<Questions>> cqSub(@Path("sub") String sub);
 
+    @GET("/c_q/{qid}/")
+    Call<List<Questions>> cqID(@Path("qid") String qid);
+
     @GET("/c_q/{sub}/{chapter}/")
     Call<List<Questions>> cqSubChap(@Path("sub") String sub, @Path("chapter") String chapter);
 

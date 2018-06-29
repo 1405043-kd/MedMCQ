@@ -28,6 +28,7 @@ public class MedicalMainActivity extends AppCompatActivity {
         subjectListButton = (Button) findViewById(R.id.button_sub);
         previousDentalQuesButton = (Button) findViewById(R.id.button_dentalQstn);
         previousMediQuesButton = (Button) findViewById (R.id.button_medicalQstn);
+        archiveButton = (Button) findViewById(R.id.button_archive);
 
         subjectListButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,13 @@ public class MedicalMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 launchactivity_previousmeden("mediButton");
+            }
+        });
+        archiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MedicalMainActivity.this, ArchiveActivity.class);
+                startActivity(intent);
             }
         });
 

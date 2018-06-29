@@ -11,9 +11,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo48"
+        android:icon="@drawable/logo_main"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
@@ -117,6 +117,34 @@
 
         <activity android:name=".MediDentalPreviousActivity" />
         <activity android:name=".PaymentActivity" />
+
+        <activity
+            android:name=".RankActivity"
+            android:label="মেধাতালিকা"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".MeritListActivity"
+            android:label="মেধাতালিকা"
+            android:parentActivityName=".RankActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".RankActivity"/>
+        </activity>
+        <activity
+            android:name=".ArchiveActivity"
+            android:label="আর্কাইভ"
+            android:parentActivityName=".MedicalMainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MedicalMainActivity" />
+        </activity>
     </application>
 
 </manifest>

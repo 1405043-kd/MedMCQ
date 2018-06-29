@@ -191,8 +191,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.fook_notice) {
+        if (id == R.id.fook_rank) {
             // Handle the camera action
+            Intent intent=new Intent(MainActivity.this, RankActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.goga) {
 
         } else if (id == R.id.recharge) {

@@ -17,9 +17,9 @@
             android:icon="@drawable/icons8_box_filled_50"
             android:title="রিচার্জ করুন" />
         <item
-            android:id="@+id/fook_notice"
+            android:id="@+id/fook_rank"
             android:icon="@drawable/icons8_classroom_filled_50"
-            android:title="নোটিশ বোর্ড" />
+            android:title="মেধাতালিকা দেখুন" />
     </group>
 
     <item android:title="">

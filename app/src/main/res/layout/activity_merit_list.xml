@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="মেধাতালিকা"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_gravity="center_horizontal"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_gravity="center">
+
+    </ListView>
+
+    <ProgressBar
+        android:id="@+id/progressBar_meritList"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity ="center"
+        android:indeterminate="true"
+        android:indeterminateTint="@android:color/holo_green_light"/>
+
+</LinearLayout>
