@@ -18,23 +18,23 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id">
-        </meta-data>
+            android:value="@string/facebook_app_id"></meta-data>
 
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.BROWSABLE"/>
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"
             android:label="Log in"
-            android:parentActivityName=".SplashActivity">
+            android:parentActivityName=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SplashActivity" />
@@ -104,7 +104,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".ProfileActivity"
             android:label="প্রোফাইল"
@@ -114,10 +113,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity android:name=".MediDentalPreviousActivity" />
         <activity android:name=".PaymentActivity" />
-
         <activity
             android:name=".RankActivity"
             android:label="মেধাতালিকা"
@@ -134,7 +131,7 @@
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".RankActivity"/>
+                android:value=".RankActivity" />
         </activity>
         <activity
             android:name=".ArchiveActivity"
@@ -145,6 +142,48 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MedicalMainActivity" />
         </activity>
+        <activity
+            android:name=".PackageActivity"
+            android:label="প্যাকেজ"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".PackageActivityMedical"
+            android:label="মেডিকেল প্যাকেজ"
+            android:parentActivityName=".PackageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PackageActivity" />
+        </activity>
+        <activity
+            android:name=".PackageActivityVarsity"
+            android:label="ভার্সিটি প্যাকেজ"
+            android:parentActivityName=".PackageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PackageActivity" />
+        </activity>
+        <activity
+            android:name=".PackageBuyStatusActivity"
+            android:label="প্যাকেজ স্ট্যাটাস"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".RechargeActivity"
+            android:label="রিচার্জ"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".DailyExamActivity"></activity>
+        <activity android:name=".ArchieveQuestionActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="20dp"
+    android:id="@+id/linearPopupVarsityPackage">
+
+    <TextView
+        android:id="@+id/textViewPopupVarsityPackage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="আপনার একাউন্ট থেকে ৭৫ টাকা কেটে নেয়া হবে। আপনি কি রাজি?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="হ্যাঁ"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:background="@android:color/holo_green_light"
+            android:textColor="@android:color/white"
+            android:id="@+id/buttonPopupVarsityPackageConfirm"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:text="না"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="#ff0000"
+            android:textColor="@android:color/white"
+            android:id="@+id/buttonPopupVarsityPackageCancel"/>
+    </LinearLayout>
+
+
+</LinearLayout>

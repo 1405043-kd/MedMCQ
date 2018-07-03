@@ -46,14 +46,6 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setBackgroundDrawable(
                 new ColorDrawable(Color.parseColor("#5e9c00")));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -98,6 +90,7 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
     private void UserDataSendToServer(){
         FirebaseAuth mAuth;
         mAuth = FirebaseAuth.getInstance();
@@ -148,7 +141,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void launchActivity_notice() {
-        Intent intent = new Intent(this, NoticeActivity.class);
+        Intent intent = new Intent(this, PackageActivity.class);
         startActivity(intent);
     }
 
@@ -200,7 +193,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.recharge) {
 
-            Intent intent = new Intent(MainActivity.this, PaymentActivity.class);
+            Intent intent = new Intent(MainActivity.this, RechargeActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.home_page) {

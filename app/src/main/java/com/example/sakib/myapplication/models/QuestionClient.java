@@ -40,6 +40,9 @@ public interface QuestionClient {
     @GET("/e_history/{user_id}/")
     Call<List<ExamHistory>> e_history_user(@Path("user_id") String user_id);
 
+    @GET("/e_history/e/{exam_name}/")
+    Call<List<ExamHistory>> get_history_daily(@Path("exam_name") String exam_name);
+
     @POST("/e_history/")
     Call<ExamHistory> post_e_history(@Body ExamHistory examHistory);
 

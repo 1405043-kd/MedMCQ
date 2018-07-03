@@ -24,11 +24,21 @@ public class MedicalMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical_main);
 
-
+        examButton = (Button) findViewById(R.id.button_exam) ;
         subjectListButton = (Button) findViewById(R.id.button_sub);
         previousDentalQuesButton = (Button) findViewById(R.id.button_dentalQstn);
         previousMediQuesButton = (Button) findViewById (R.id.button_medicalQstn);
         archiveButton = (Button) findViewById(R.id.button_archive);
+
+
+
+        examButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MedicalMainActivity.this, DailyExamActivity.class);
+                startActivity(intent);
+            }
+        });
 
         subjectListButton.setOnClickListener(new View.OnClickListener() {
             @Override

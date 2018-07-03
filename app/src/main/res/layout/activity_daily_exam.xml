@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DailyExamActivity"
+    android:background="#1ABC9C">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDailyExamMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="40dp">
+
+        <Button
+            android:id="@+id/button_exam_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 1"/>
+
+        <Button
+            android:id="@+id/button_exam_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 2"/>
+
+        <Button
+            android:id="@+id/button_exam_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 3"/>
+
+        <Button
+            android:id="@+id/button_exam_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 4"/>
+
+        <Button
+            android:id="@+id/button_exam_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 5"/>
+
+        <Button
+            android:id="@+id/button_exam_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 6"/>
+        <Button
+            android:id="@+id/button_exam_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 7"/>
+        <Button
+            android:id="@+id/button_exam_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 8"/>
+        <Button
+            android:id="@+id/button_exam_9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 9"/>
+
+        <Button
+            android:id="@+id/button_exam_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 10"/>
+
+        <Button
+            android:id="@+id/button_exam_11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 11"/>
+
+        <Button
+            android:id="@+id/button_exam_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 12"/>
+
+        <Button
+            android:id="@+id/button_exam_13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 13"/>
+
+        <Button
+            android:id="@+id/button_exam_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 14"/>
+
+        <Button
+            android:id="@+id/button_exam_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 15"/>
+
+        <Button
+            android:id="@+id/button_exam_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 16"/>
+
+        <Button
+            android:id="@+id/button_exam_17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 17"/>
+
+        <Button
+            android:id="@+id/button_exam_18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 18"/>
+        <Button
+            android:id="@+id/button_exam_19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 19"/>
+        <Button
+            android:id="@+id/button_exam_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 20"/>
+
+        <Button
+            android:id="@+id/button_exam_21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 21"/>
+
+        <Button
+            android:id="@+id/button_exam_22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 22"/>
+
+        <Button
+            android:id="@+id/button_exam_23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 23"/>
+        <Button
+            android:id="@+id/button_exam_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 24"/>
+        <Button
+            android:id="@+id/button_exam_25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27AE60"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="DAILY EXAM 25"/>
+    </LinearLayout>
+
+</ScrollView>

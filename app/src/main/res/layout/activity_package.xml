@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PackageActivity"
+    android:orientation="vertical"
+    android:background="#1ABC9C">
+
+    <Button
+        android:id="@+id/id_medical_packageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="মেডিকেল প্যাকেজ"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#f5ffff"/>
+    <Button
+        android:id="@+id/id_varsity_packageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="ভার্সিটি প্যাকেজ"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#f5ffff"/>
+</LinearLayout>

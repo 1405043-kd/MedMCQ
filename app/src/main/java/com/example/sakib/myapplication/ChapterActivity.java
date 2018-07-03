@@ -239,6 +239,7 @@ public class ChapterActivity extends AppCompatActivity{
                 buttonPopupExam.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        popupWindow.dismiss();
                         Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
                         intent.putExtra("apiStr",toSendString);
                         startActivity(intent);
@@ -248,6 +249,7 @@ public class ChapterActivity extends AppCompatActivity{
                 buttonPopupSeeQstn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        popupWindow.dismiss();
                         Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
                         intent.putExtra("apiStr",toSendString);
                         startActivity(intent);

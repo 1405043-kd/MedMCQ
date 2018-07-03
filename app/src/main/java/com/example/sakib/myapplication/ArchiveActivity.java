@@ -1,5 +1,6 @@
 package com.example.sakib.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.sakib.myapplication.models.Adapters.ArchieveAnsAdapter;
 import com.example.sakib.myapplication.models.Adapters.ExamHistoryAdapter;
 import com.example.sakib.myapplication.models.ExamHistory;
 import com.example.sakib.myapplication.models.QuestionClient;
@@ -85,13 +87,17 @@ public class ArchiveActivity extends AppCompatActivity {
                         listView.setOnItemClickListener(new ListView.OnItemClickListener(){
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                                  ExamHistory questionSet=(ExamHistory) adapterView.getItemAtPosition(i);
+                                  ExamHistory eHist=(ExamHistory) adapterView.getItemAtPosition(i);
 
-                                  Toast.makeText(ArchiveActivity.this, Integer.toString(questionSet.getQuestionId()), Toast.LENGTH_SHORT).show();
+                                  Toast.makeText(ArchiveActivity.this, Integer.toString(eHist.getQuestionId()), Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(ArchiveActivity.this, ArchieveQuestionActivity.class);
+
+                                intent.putExtra("apiQN",eHist.getQuestionId());
+                                startActivity(intent);
 
 
 
-                                  fetchQuestions(questionSet.getQuestionId(),questionClient);
                             }
                         });
 
@@ -112,28 +118,5 @@ public class ArchiveActivity extends AppCompatActivity {
 
     }
 
-    public void fetchQuestions(int id, QuestionClient client){
 
-        Call<List<Questions>> call_cq =client.cqID(String.valueOf(id));
-
-        call_cq.enqueue(new Callback<List<Questions>>() {
-            @Override
-            public void onResponse(Call<List<Questions>> call, Response<List<Questions>> response) {
-           //     System.out.println("hcud");
-
-                response.body();
-                System.out.print(response.body().get(0).getOption1());
-                Toast.makeText(ArchiveActivity.this, response.body().get(0).getOption1(), Toast.LENGTH_SHORT).show();
-
-
-        //        listView.setAdapter(new ExamHistoryAdapter(ArchiveActivity.this, examHistories, questionSet));
-
-            }
-            @Override
-            public void onFailure(Call<List<Questions>> call, Throwable t) {
-                Toast.makeText(ArchiveActivity.this, "error :(", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
 }

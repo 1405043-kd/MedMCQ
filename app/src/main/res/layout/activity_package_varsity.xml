@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PackageActivity"
+    android:orientation="vertical"
+    android:background="#1ABC9C">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutVarsityPackage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#f6ffd5"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ভার্সিটি প্যাকেজ"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_green_dark"
+            android:padding="15dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  জীববিজ্ঞানের অধ্যায় আছে ২৪ টি। বিগত বছরের প্রশ্ন আছে ৩০টি চ্যাপ্টার।"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue"
+            android:padding="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="  আলাদা করে আনলক করতে তোমার খরচ হবে ১৬০ টাকা।"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="   ৭৫ টাকায় প্যাকেজ কিনে একবারে আনলক করো পুরো ভার্সিটি প্রস্তুতি! "
+            android:textSize="18sp"
+            android:textColor="@android:color/holo_red_dark"
+            android:padding="15dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            />
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_varsityPackage_Buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="প্যাকেজ কিনুন"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RechargeActivity"
+    android:orientation="vertical"
+    android:background="#f0f8ff"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/rechargeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="রিচার্জের পরিমাণ লিখুন"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/holo_green_dark"
+           />
+        <TextView
+            android:id="@+id/rechargeText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(সর্বনিম্ন ১০ টাকা। টাকার পরিমাণ ইংরেজিতে লিখুন)"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/rechargeAmountText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:hint="এখানে রিচার্জের পরিমাণ লিখুন(ইংরেজিতে)"
+            android:textColorHint="#808080"
+            />
+
+        <Button
+            android:id="@+id/button_recharge_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/profile_buttonstyle"
+            android:textColor="#ffffff"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="রিচার্জ করুন"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:background="#ffffff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_recharge"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:background="#ffffff">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rechargeWay1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/holo_green_dark"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="বিকাশঃ"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/holo_red_dark"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_1"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_2"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_3"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_4"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_5"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_6"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_7"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_8"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_9"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_10"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_11"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_12"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/step_13"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="রকেট ও অন্যান্যঃ"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/holo_red_dark"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rocket_step"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+               />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -79,21 +79,26 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
         Call<List<Questions>> call_cq;
 
-        if(apiStr.contains("med")|| apiStr.contains("den")){
-            apiStr=returnUrlX(apiStr);
-        }
-        String[] parts = apiStr.split("/");
-        String part1 = parts[0]; // 004
-        String part2 = parts[1]; // 034556
+        if(apiStr.contains("DAILY")){
 
-        if(part1.contains("Bio1")||part1.contains("Bio2")||part1.contains("Ph1")||part1.contains("Ph2")||part1.contains("Ch1")
-                ||part1.contains("Ch2")||part1.contains("gKnow")||part1.contains("English")) {
-            call_cq = questionClient.cqSubChap(part1, part2);
+            call_cq = questionClient.cqSubChap("daily",apiStr);
         }
         else {
-            call_cq =questionClient.xqYearMVD(part1,part2);
-        }
 
+            if (apiStr.contains("med") || apiStr.contains("den")) {
+                apiStr = returnUrlX(apiStr);
+            }
+            String[] parts = apiStr.split("/");
+            String part1 = parts[0]; // 004
+            String part2 = parts[1]; // 034556
+
+            if (part1.contains("Bio1") || part1.contains("Bio2") || part1.contains("Ph1") || part1.contains("Ph2") || part1.contains("Ch1")
+                    || part1.contains("Ch2") || part1.contains("gKnow") || part1.contains("English")) {
+                call_cq = questionClient.cqSubChap(part1, part2);
+            } else {
+                call_cq = questionClient.xqYearMVD(part1, part2);
+            }
+        }
         buttonSubmit = (Button) findViewById(R.id.subBut);
         buttonSubmit.setVisibility(View.GONE);
 
@@ -161,7 +166,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                         FirebaseUser user = mAuth.getCurrentUser();
 
 
-                        ExamHistory examHistory= new ExamHistory(user.getUid(),questions.get(0).getQuestionId(),"C", total);
+                        ExamHistory examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(),"C", total);
                         sendExamHistory(examHistory);
 
                         Toast.makeText(ChapterQuestionActivity.this, Float.toString(total), Toast.LENGTH_SHORT).show();

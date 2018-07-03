@@ -183,7 +183,7 @@
                 android:layout_marginEnd="12dp"
                 />
             <TextView
-                android:text="নোটিশ"
+                android:text="প্যাকেজ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"

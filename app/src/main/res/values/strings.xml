@@ -2,8 +2,8 @@
     <string name="app_name">MediTest</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Mission DMC mcq</string>
+    <string name="nav_header_subtitle"></string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="button11">জীববিজ্ঞান ১ম পত্র</string>
@@ -25,6 +25,25 @@
     <string name="actvity_notice_head">নোটিশ</string>
     <string name="subject_name_header">বিষয়সমূহ</string>
     <string name="title_activity_login">Sign in</string>
+
+    <string name="rechargeWay1">রিচার্জ করার পদ্ধতিঃ</string>
+    <string name="rechargeWay2">রিচার্জ করার পদ্ধতিঃ</string>
+    <string name="step_1">Step-1: পারসোনাল/এজেন্ট এর বিকাশ একাউন্ট থেকে *247# ডায়াল করে বিকাশ মেনুতে যান এবং অপশন 3.Payment সিলেক্ট করুন।</string>
+    <string name="step_2">step-2: মার্চেন্ট নাম্বার "01888888888" দিন।</string>
+    <string name="step_3">step-3: রিচার্জের পরিমাণ উল্লেখ করুন (সর্বনিম্ন ১০ টাকা)।</string>
+    <string name="step_4">step-4: রেফারেন্স নাম্বার যেকোন একটা সংখ্যা দিন (যেমনঃ 9999)।</string>
+    <string name="step_5">step-5: কাউন্টার নাম্বারঃ 1 দিন</string>
+    <string name="step_6">step-6: আপনার বিকাশ পিন নাম্বার দিন।</string>
+    <string name="step_7">step-7: পেমেন্ট সাকসেসফুল হলে মোবাইলে যে মেসেজ আসবে তা থেকে TrxID টা কাগজে লিখে সংরক্ষণ করুন।</string>
+    <string name="step_8">step-8: MissionDmcMcq অ্যাপে প্রবেশ করুন।</string>
+    <string name="step_9">step-9: অ্যাপে \"রিচার্জ করুন\" অপশন সিলেক্ট করুন।</string>
+    <string name="step_10">step-10:Step-3 থেকে পাওয়া পেমেন্টের সমপরিমাণ টাকা উল্লেখ করুন</string>
+    <string name="step_11">step-11: রিচার্জ করুন বাটন ক্লিক করুন।</string>
+    <string name="step_12">step-12: পেমেন্ট মেথড লিস্ট থেকে বিকাশ সিলেক্ট করুন।</string>
+    <string name="step_13">step-13: \"লেনদেন আইডি\" তে TrxID দিয়ে সাবমিট দিন। রিচার্জ করার প্রক্রিয়া সম্পন্ন হল।</string>
+    <string name="rocket_step">আপনার একাউন্ট নাম্বার এবং পিন ব্যবহার করে পেমেন্ট করুন।</string>
+    <string name="about_recharge">আপনি রিচার্জ করলে মোবাইলের রিচার্জের মত আপনার ব্যালান্স এ এমাউন্ট যোগ হবে।আপনি যে কোনো পরীক্ষা দিতে চাইলে আপনার একাউন্ট থেকে ব্যালান্স কাটা যাবে। একটি পরীক্ষার জন্য একবারই মাত্র টাকা কাটা হবে।পরবর্তীতে আর্কাইভ থেকে
+     প্রশ্ন দেখার সময় ঐ প্রশ্নের জন্য কোন টাকা কাটা হবেনা।</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
