@@ -30,15 +30,28 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
 import com.example.sakib.myapplication.models.Adapters.ChapterAdapter;
+import com.example.sakib.myapplication.models.Adapters.QuestionAdapter;
+import com.example.sakib.myapplication.models.ExamHistory;
+import com.example.sakib.myapplication.models.QuestionClient;
+import com.example.sakib.myapplication.models.Questions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class ChapterActivity extends AppCompatActivity{
 
-    String subName="";
-    ListView chapterListView;
+    private String subName="";
+    private ListView chapterListView;
     private List<String> chapterListbio1=new ArrayList<>();
     private List<String> chapterListbio2=new ArrayList<>();
     private List<String> chapterListchem1=new ArrayList<>();
@@ -47,6 +60,8 @@ public class ChapterActivity extends AppCompatActivity{
     private List<String> chapterListphy2=new ArrayList<>();
     private List<String> chapterListgKnow=new ArrayList<>();
     private List<String> chapterListenglish=new ArrayList<>();
+    private boolean checker=false;
+    private List<ExamHistory> e_historys=new ArrayList<ExamHistory>();
 
     PopupWindow popupWindow;
     Button buttonPopupExam;
@@ -209,15 +224,31 @@ public class ChapterActivity extends AppCompatActivity{
 //                intent.putExtra("apiStr",apiStr);
 //                startActivity(intent);
 
-                String chapterName = (String) adapterView.getItemAtPosition(i);
-                String apiStr= chapterName + " অধ্যায় থেকে ৫০ টি প্রশ্ন দিয়ে পরীক্ষা দিন। পরীক্ষাটি দিতে হলে আপনার একাউন্ট থেকে ৫ টাকা কেটে নেয়া " +
+                final String chapterName = (String) adapterView.getItemAtPosition(i);
+                final String apiStr= chapterName + " অধ্যায় থেকে ৫০ টি প্রশ্ন দিয়ে পরীক্ষা দিন। পরীক্ষাটি দিতে হলে আপনার একাউন্ট থেকে ৫ টাকা কেটে নেয়া " +
                         "হবে।";
 
 
                 final String toSendString=subName+"/"+chapterName;
+                FirebaseAuth mAuth;
+                mAuth = FirebaseAuth.getInstance();
+                FirebaseUser user = mAuth.getCurrentUser();
 
 
-                //instantiate the popup.xml layout file
+                final Retrofit.Builder builder = new Retrofit.Builder()
+                        .baseUrl("http://missiondmc.ml/")
+                        //    .baseUrl("https://api.github.com/")
+                        .addConverterFactory(GsonConverterFactory.create());
+
+                Retrofit retrofit = builder.build();
+                QuestionClient questionClient = retrofit.create(QuestionClient.class);
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
+                Call<List<ExamHistory>> call= questionClient.e_history_user(user.getUid());
+     //           instantiate the popup.xml layout file
                 LayoutInflater layoutInflater = (LayoutInflater) ChapterActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View customView =layoutInflater.inflate(R.layout.popup_chapter_exam,null);
                 buttonPopupExam = (Button) customView.findViewById(R.id.buttonPopupExam);
@@ -227,35 +258,103 @@ public class ChapterActivity extends AppCompatActivity{
                 linearPopup =(LinearLayout) customView.findViewById(R.id.linearPopup);
                 linearPopup.setBackgroundColor(Color.parseColor("#2D2419"));
                 textViewPopup.setText(apiStr);
+                popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
+                // display the popup window
 
                 //initiate popupWindow
 
-                popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
-                // display the popup window
-                popupWindow.showAtLocation(linearLayout1, Gravity.CENTER, 0, 0);
-                // popupWindow.setOutsideTouchable(true);
-                popupWindow.update();
 
-                buttonPopupExam.setOnClickListener(new View.OnClickListener() {
+                final ExamHistory bought=new ExamHistory(user.getUid(), user.getDisplayName(),0, chapterName, "C", (float) 0.0);
+
+                call.enqueue(new Callback<List<ExamHistory>>() {
                     @Override
-                    public void onClick(View v) {
-                        popupWindow.dismiss();
-                        Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
-                        intent.putExtra("apiStr",toSendString);
-                        startActivity(intent);
+                    public void onResponse(Call<List<ExamHistory>> call, Response<List<ExamHistory>> response) {
+                        //System.out.println("hcud");
+                        checker=false;
+
+                        e_historys = response.body();
+
+
+                        for (ExamHistory curInstance: e_historys) {
+                            String checkerStr=curInstance.getQuestionName();
+                            if(checkerStr.equals(chapterName) || checkerStr.equals("SUPERMED") || checkerStr.equals("SUPERVAR")) {
+                                checker = true;
+
+                            }
+                        }
+
+                        if(checker==false) {
+                        popupWindow.showAtLocation(linearLayout1, Gravity.CENTER, 0, 0);
+
+                            // popupWindow.setOutsideTouchable(true);
+                            popupWindow.update();
+
+                            buttonPopupExam.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    final Retrofit.Builder builder = new Retrofit.Builder()
+                                            .baseUrl("http://missiondmc.ml/")
+                                            //    .baseUrl("https://api.github.com/")
+                                            .addConverterFactory(GsonConverterFactory.create());
+
+                                    Retrofit retrofit = builder.build();
+                                    QuestionClient cClient = retrofit.create(QuestionClient.class);
+
+
+                                    Call<ExamHistory> calle= cClient.post_e_history(bought);
+
+                                    calle.enqueue(new Callback<ExamHistory>() {
+                                        @Override
+                                        public void onResponse(Call<ExamHistory> call, Response<ExamHistory> response) {
+                                            Toast.makeText(ChapterActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+                                            System.out.print("FUFU"+ response.body());
+
+                                            popupWindow.dismiss();
+                                            Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
+                                            intent.putExtra("apiStr", toSendString);
+
+                                            startActivity(intent);
+
+                                        }
+
+                                        @Override
+                                        public void onFailure(Call<ExamHistory> call, Throwable t) {
+                                            Toast.makeText( ChapterActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
+
+                                }
+                            });
+
+                            buttonPopupSeeQstn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    popupWindow.dismiss();
+                                    Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
+                                    intent.putExtra("apiStr", toSendString);
+                                    startActivity(intent);
+                                }
+                            });
+                        }
+                        else {
+                            Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
+                            intent.putExtra("apiStr", toSendString);
+                            startActivity(intent);
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<ExamHistory>> call, Throwable t) {
+                        Toast.makeText(ChapterActivity.this, "error :(", Toast.LENGTH_SHORT).show();
                     }
                 });
 
-                buttonPopupSeeQstn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        popupWindow.dismiss();
-                        Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
-                        intent.putExtra("apiStr",toSendString);
-                        startActivity(intent);
-                    }
-                });
 
+////////////////////////////////////////////////////////////////////////
             }
         });
 

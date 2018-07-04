@@ -89,7 +89,7 @@ public class ArchiveActivity extends AppCompatActivity {
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                   ExamHistory eHist=(ExamHistory) adapterView.getItemAtPosition(i);
 
-                                  Toast.makeText(ArchiveActivity.this, Integer.toString(eHist.getQuestionId()), Toast.LENGTH_SHORT).show();
+                                 // Toast.makeText(ArchiveActivity.this, Integer.toString(eHist.getQuestionId()), Toast.LENGTH_SHORT).show();
 
                                 Intent intent = new Intent(ArchiveActivity.this, ArchieveQuestionActivity.class);
 

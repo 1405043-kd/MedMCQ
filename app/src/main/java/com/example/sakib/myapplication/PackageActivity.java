@@ -22,6 +22,7 @@ public class PackageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PackageActivity.this, PackageActivityMedical.class);
+                intent.putExtra("button","medical");
                 startActivity(intent);
             }
         });
@@ -30,6 +31,7 @@ public class PackageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PackageActivity.this, PackageActivityVarsity.class);
+                intent.putExtra("button","varsity");
                 startActivity(intent);
             }
         });

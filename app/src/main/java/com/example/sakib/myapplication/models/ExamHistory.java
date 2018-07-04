@@ -7,6 +7,17 @@ public class ExamHistory implements Comparable<ExamHistory>{
     private String UserId;
     private String UserName;
     private int QuestionId;
+    private String QuestionName;
+
+    public void setUserId(String userId) {
+        UserId = userId;
+    }
+
+    public String getQuestionName() {
+
+        return QuestionName;
+    }
+
     private String TableName;
     private float Marks;
 
@@ -24,10 +35,11 @@ public class ExamHistory implements Comparable<ExamHistory>{
     public ExamHistory() {
     }
 
-    public ExamHistory(String userId, String userName, int questionId, String tableName, float marks) {
+    public ExamHistory(String userId, String userName, int questionId, String  questionName, String tableName, float marks) {
         this.UserId = userId;
         this.UserName = userName;
         this.QuestionId = questionId;
+        this.QuestionName = questionName;
         this.TableName = tableName;
         this.Marks = marks;
     }

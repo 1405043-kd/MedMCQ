@@ -1,5 +1,6 @@
 package com.example.sakib.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
@@ -35,6 +36,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static android.os.Build.VERSION_CODES.M;
+import static com.example.sakib.myapplication.R.color.black;
+import static com.example.sakib.myapplication.R.color.red;
 
 public class ChapterQuestionActivity extends AppCompatActivity {
     private static final long START_TIME_IN_MILLIS = 60000;
@@ -43,6 +46,9 @@ public class ChapterQuestionActivity extends AppCompatActivity {
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
     ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 300);
     private ProgressBar spinner;
+    private String part1="";
+    private String part2="";
+    private String tabuName="";
 
 
     String apiStr="";
@@ -50,6 +56,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
     Button buttonSubmit;
     String []answers;
     List<Questions> questions=new ArrayList<Questions>();
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +64,6 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
         spinner = (ProgressBar)findViewById(R.id.progressBar1);
         spinner.setVisibility(View.VISIBLE);
-
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             apiStr = extras.getString("apiStr");
@@ -67,6 +73,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
         questionList = (ListView) findViewById(R.id.question_pagination_list);
         mTextViewCountDown = (TextView) findViewById(R.id.text_view_countdown);
+        mTextViewCountDown.setBackgroundColor(R.color.black);
         mTextViewCountDown.setVisibility(View.GONE);
 
         final Retrofit.Builder builder = new Retrofit.Builder()
@@ -82,18 +89,24 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         if(apiStr.contains("DAILY")){
 
             call_cq = questionClient.cqSubChap("daily",apiStr);
+            tabuName="C";
         }
         else {
 
             if (apiStr.contains("med") || apiStr.contains("den")) {
                 apiStr = returnUrlX(apiStr);
+                if(apiStr.contains("med"))
+                    tabuName="XM";
+                else
+                    tabuName="XD";
             }
             String[] parts = apiStr.split("/");
-            String part1 = parts[0]; // 004
-            String part2 = parts[1]; // 034556
+            part1 = parts[0]; // 004
+            part2 = parts[1]; // 034556
 
             if (part1.contains("Bio1") || part1.contains("Bio2") || part1.contains("Ph1") || part1.contains("Ph2") || part1.contains("Ch1")
                     || part1.contains("Ch2") || part1.contains("gKnow") || part1.contains("English")) {
+                tabuName="C";
                 call_cq = questionClient.cqSubChap(part1, part2);
             } else {
                 call_cq = questionClient.xqYearMVD(part1, part2);
@@ -127,8 +140,9 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                 spinner.setVisibility(View.GONE);
                 buttonSubmit.setVisibility(View.VISIBLE);
                 mTextViewCountDown.setVisibility(View.VISIBLE);
+                int nx= questions.size();
 
-                startTimer();
+                startTimer(nx);
 
 
 
@@ -164,9 +178,13 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                         FirebaseAuth mAuth;
                         mAuth = FirebaseAuth.getInstance();
                         FirebaseUser user = mAuth.getCurrentUser();
+                        ExamHistory examHistory;
 
+                        if(tabuName.contains("C"))
+                            examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part2, "C", total);
+                        else
+                            examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part1, "X", total);
 
-                        ExamHistory examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(),"C", total);
                         sendExamHistory(examHistory);
 
                         Toast.makeText(ChapterQuestionActivity.this, Float.toString(total), Toast.LENGTH_SHORT).show();
@@ -335,17 +353,26 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         return "";
     }
 
-    private void startTimer() {
-        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+    private void startTimer(int n) {
+        int x=40000*n;
+
+        mCountDownTimer = new CountDownTimer(x,1000) {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onTick(long millisUntilFinished) {
                 mTimeLeftInMillis = millisUntilFinished;
                 Toast.makeText(ChapterQuestionActivity.this, "start"+mTimeLeftInMillis, Toast.LENGTH_SHORT).show();
                 updateCountDownText();
+                if (millisUntilFinished<=10000) {
+                    mTextViewCountDown.setBackgroundColor(red);
+                    toneGen1.startTone(300);
+
+                }
             }
 
             @Override
             public void onFinish() {
+                toneGen1.stopTone();
                 buttonSubmit.performClick();
             }
         }.start();

@@ -21,6 +21,7 @@ public class PackageActivityVarsity extends AppCompatActivity {
     LinearLayout linearLayoutPopup;
     LinearLayout linearLayoutVarsityPackage;
     PopupWindow popupWindow;
+    String apiStr="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +51,18 @@ public class PackageActivityVarsity extends AppCompatActivity {
                 // popupWindow.setOutsideTouchable(true);
                 popupWindow.update();
 
+                Bundle extras = getIntent().getExtras();
+                if (extras != null) {
+                    apiStr = extras.getString("button");
+                }
+
                 buttonVarsityConfirm.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
                         popupWindow.dismiss();
                         Intent intent = new Intent(PackageActivityVarsity.this, PackageBuyStatusActivity.class);
+                        intent.putExtra("button",apiStr);
                         startActivity(intent);
                     }
                 });

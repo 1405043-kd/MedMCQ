@@ -21,6 +21,7 @@ public class PackageActivityMedical extends AppCompatActivity {
     LinearLayout linearLayout;
     LinearLayout linearLayoutMediPackage;
     PopupWindow popupWindow;
+    String apiStr="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,13 @@ public class PackageActivityMedical extends AppCompatActivity {
                 linearLayout = (LinearLayout) customView.findViewById(R.id.linearPopupMedicalPackage);
                 linearLayout.setBackgroundColor(Color.parseColor("#2D2419"));
 
+
+                Bundle extras = getIntent().getExtras();
+                if (extras != null) {
+                    apiStr = extras.getString("button");
+                }
+
+
                 popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
                 linearLayoutMediPackage = (LinearLayout) findViewById(R.id.linearLayoutMedicalPackage);
                 popupWindow.showAtLocation(linearLayoutMediPackage, Gravity.CENTER, 0, 0);
@@ -57,6 +65,7 @@ public class PackageActivityMedical extends AppCompatActivity {
                     public void onClick(View v) {
                         popupWindow.dismiss();
                         Intent intent = new Intent(PackageActivityMedical.this, PackageBuyStatusActivity.class);
+                        intent.putExtra("button",apiStr);
                         startActivity(intent);
                     }
                 });

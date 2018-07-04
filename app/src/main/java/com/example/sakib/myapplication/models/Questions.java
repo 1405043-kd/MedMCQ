@@ -10,6 +10,7 @@ public class Questions implements Serializable{
     //   private String MVD;
     private int QuestionId;
     private String Question;
+    private String ChapterName;
     private String Option1;
     private String Option2;
     private String Option3;
@@ -35,6 +36,10 @@ public class Questions implements Serializable{
 
     public String getQuestion() {
         return Question;
+    }
+
+    public String getChapterName() {
+        return ChapterName;
     }
 
     public String getOption1() {
