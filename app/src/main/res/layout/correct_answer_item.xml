@@ -73,14 +73,18 @@
                 android:layout_marginBottom="8dp"/>
             <TextView
                 android:id="@+id/correctAnsw"
+                android:background="#faebdc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="RadioButton"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="21sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:padding="7dp"
+               />
         </LinearLayout>
     </LinearLayout>
 

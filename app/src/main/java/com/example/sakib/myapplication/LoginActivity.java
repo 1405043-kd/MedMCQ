@@ -28,6 +28,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 
 
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -123,6 +124,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
    //     populateAutoComplete();
         cbmanager = CallbackManager.Factory.create();
         loadingBar = new ProgressDialog(this);
+        TextView tv3=findViewById(R.id.logintv_id);
+        tv3.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left));
     //    mPasswordView = (EditText) findViewById(R.id.password);
 //        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 //            @Override

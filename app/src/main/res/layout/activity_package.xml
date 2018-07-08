@@ -5,13 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".PackageActivity"
     android:orientation="vertical"
-    android:background="#1ABC9C">
+    android:background="#d1f1eb"
+    android:id="@+id/linearLayoutPackage">
 
     <Button
         android:id="@+id/id_medical_packageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_dark"
+        android:background="#1ABC9C"
         android:layout_marginTop="160dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
@@ -25,7 +26,7 @@
         android:id="@+id/id_varsity_packageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_light"
+        android:background="#27AE60"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"

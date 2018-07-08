@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MediTest</string>
+    <string name="app_name">Mission DMC mcq</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Mission DMC mcq</string>
@@ -15,7 +15,7 @@
     <string name="button17">ইংরেজি</string>
     <string name="button18">সাধারণ জ্ঞান</string>
     <string name="homepage_string">হোমপেজ</string>
-    <string name="exam_notice">Exam Notice</string>
+    <string name="exam_notice">এখানে ডেইলি এক্সামের সময়সূচী জানিয়ে দেয়া হবে।</string>
     <string name="button_exam">পরীক্ষা দিন</string>
     <string name="button_archive">আর্কাইভ</string>
     <string name="next_exam">লেকচার নোটস</string>
@@ -57,4 +57,5 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."</string>
     <string name="facebook_app_id">371080506716260</string>
+    <string name="about_us1"> মেডিকেল ভর্তি পরীক্ষার প্রস্ততিকে আরো যুগোপযোগী ও শিক্ষার্থী সহায়ক \u0020 করার জন্য ঢাকা মেডিকেল কলেজ শিক্ষার্থীদের এ উদ্যোগ। </string>
 </resources>

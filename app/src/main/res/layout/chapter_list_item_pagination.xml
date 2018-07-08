@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linearLayoutMediDentalMain">
 
     <!--<TextView-->
         <!--android:id="@+id/chapter_item_pagination_text"-->
@@ -22,8 +23,11 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:background="#27AE60"
+        android:background="#006B3C"
         android:text="Click Me"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:autoSizeMaxTextSize="18sp"
         android:textColor="@android:color/white"/>
 
 </LinearLayout>

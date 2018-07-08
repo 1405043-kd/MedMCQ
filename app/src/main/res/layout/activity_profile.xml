@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,25 +23,25 @@
             android:orientation="vertical">
 
             <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/propic"
                 android:layout_width="150dp"
+                android:background="#4bb6ef"
                 android:layout_height="150dp"
-                android:layout_marginTop="30dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/back"
-                app:civ_border_color="#fff"
+                android:layout_marginTop="30dp"
+                app:civ_border_color="#ffffff"
                 app:civ_border_width="4dp"
                 app:civ_shadow="true"
-                app:civ_shadow_radius="10"
                 app:civ_shadow_color="#8BC34A"
-                />
+                app:civ_shadow_radius="10" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
-                android:text="Kala kanak"
-                android:textColor="#fff"
+                android:text="Your Name"
+                android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:textSize="21sp"
                 android:id="@+id/name_text"/>
@@ -67,8 +71,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Balance"
-                        android:textSize="20sp"
+                        android:text="Balance(BDT)"
+                        android:textSize="16sp"
                         android:textStyle="bold"
 
                         />
@@ -77,7 +81,7 @@
                         android:layout_height="wrap_content"
                         android:text="00"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="14sp"
                         android:paddingTop="10dp"
                         android:textColor="#4bb6ef"
                         android:id="@+id/balance_text"/>
@@ -96,15 +100,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Exams Appeared"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1205"
+                        android:text="00"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="14sp"
                         android:paddingTop="10dp"
                         android:textColor="#4bb6ef"
                         android:id="@+id/exam_appeared_text"/>
@@ -135,14 +139,14 @@
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/icons8_about_48"/>
+                android:src="@drawable/mail_328046"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="kalakanakerPutki@gmail.com"
+                android:text="yourmail@gmail.com"
                 android:layout_gravity="center_vertical"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:paddingLeft="20dp"
                 android:id="@+id/email_text"
                 />
@@ -152,6 +156,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/rechargeProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/profile_buttonstyle"
@@ -163,3 +168,5 @@
         android:textStyle="bold"
         android:textSize="15sp"/>
 </LinearLayout>
+
+</ScrollView>

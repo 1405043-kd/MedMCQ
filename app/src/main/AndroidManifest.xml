@@ -18,7 +18,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"></meta-data>
+            android:value="@string/facebook_app_id" />
 
         <activity
             android:name=".SplashActivity"
@@ -41,7 +41,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:label="হোমপেজ"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -182,8 +182,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".DailyExamActivity"></activity>
-        <activity android:name=".ArchieveQuestionActivity"></activity>
+        <activity
+            android:name=".DailyExamActivity"
+            android:label="ডেইলি এক্সাম" />
+        <activity
+            android:name=".ArchieveQuestionActivity"
+            android:label="আর্কাইভ প্রশ্ন উত্তর" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:label="আমাদের সম্পর্কে"></activity>
+        <activity android:name=".NOTREADYActivity"></activity>
     </application>
 
 </manifest>

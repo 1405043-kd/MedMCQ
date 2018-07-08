@@ -1,5 +1,6 @@
 package com.example.sakib.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
@@ -25,6 +26,17 @@ public class ResultActivity extends AppCompatActivity{
     Float res= Float.valueOf(0);
     String q;
     ListView listView;
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        Intent mainIntent = new Intent(ResultActivity.this, MainActivity.class);
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mainIntent);
+//        System.out.println("eikhanei asi france");
+//        finish();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

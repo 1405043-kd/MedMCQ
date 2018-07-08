@@ -8,28 +8,28 @@ import android.widget.Button;
 
 public class VarsityActivity extends AppCompatActivity {
 
-    private Button subjectButton;
+//    private Button subjectButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_varsity);
 
-        subjectButton = (Button) findViewById(R.id.button_sub) ;
+        //subjectButton = (Button) findViewById(R.id.button_sub) ;
 
-        subjectButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchactivity_subject();
-            }
-        });
+//        subjectButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                launchactivity_subject();
+//            }
+//        });
 
 
     }
 
-    private void launchactivity_subject()
-    {
-        Intent intent = new Intent(this, VarsitySubjectActivity.class);
-        startActivity(intent);
-    }
+//    private void launchactivity_subject()
+//    {
+//        Intent intent = new Intent(this, VarsitySubjectActivity.class);
+//        startActivity(intent);
+//    }
 
 }

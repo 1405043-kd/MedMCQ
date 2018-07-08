@@ -52,4 +52,10 @@ public interface QuestionClient {
     @GET("/profile_mod/{user_id}/")
     Call<Users> get_user(@Path("user_id") String user_id);
 
+    @GET("/board/")
+    Call<Board> notices();
+
+    @POST("/board/")
+    Call<Board> post_notice(@Body Board board);
+
 }

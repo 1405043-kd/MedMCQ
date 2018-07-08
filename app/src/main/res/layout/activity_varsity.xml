@@ -4,43 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1ABC9C"
+    android:background="#d1f1eb"
     tools:context=".VarsityActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
 
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
             android:layout_weight="1"
             android:text="নোটিশ বোর্ড"
             android:textColor="@android:color/white"
-            android:textSize="28sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:padding="8dp"
-            android:textAlignment="center"/>
+            android:padding="2dp"
+            android:textAlignment="center"
+            android:background="#006B3C"/>
 
         <TextView
             android:id="@+id/textView_notice"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
             android:layout_weight="1"
             android:layout_marginTop="0dp"
-            android:layout_marginLeft="48dp"
-            android:layout_marginRight="48dp"
-            android:layout_marginBottom="16dp"
-            android:padding="8dp"
-            android:text="@string/exam_notice"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="30dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="দুঃখিত এটি এখনো প্রস্তুত হয়নি। এতে  থাকবে-
+ ১. শতভাগ কমনের নিশ্চয়তায় অধ্যায়ভিত্তিক প্রস্ততি।
+ ২. ঢাকা বিশ্ববিদ্যালয় এর গত ১৮ বছরের জীববিজ্ঞান প্রশ্ন।
+ ৩. জাহাঙ্গীরনগর বিশ্ববিদ্যালয় এর D ইউনিট এর বিগত বছরের প্রশ্ন।
+ ৪. জগন্নাথ বিশ্ববিদ্যালয়ের বিগত ১৩ বছরের প্রশ্নপত্র।"
             android:textColor="@android:color/black"
-            android:background="#f6ffd5"
+            android:background="#f0f8ff"
+            android:textSize="18sp"
+            android:scrollbars="vertical"
+            android:textAlignment="center"
             />
 
         <Button
@@ -48,12 +63,15 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/button_exam"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#4D561C"
+            android:background="#006B3C"
             android:layout_gravity="center"/>
 
         <Button
@@ -61,12 +79,15 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/button_archive"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#606B24"
+            android:background="#006B3C"
             android:layout_gravity="center" />
 
 
@@ -75,12 +96,15 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/subject_prep"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#73802B"
+            android:background="#006B3C"
             android:layout_gravity="center" />
 
         <Button
@@ -88,12 +112,15 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
             android:text="ভার্সিটি জীববিজ্ঞান প্রশ্ন"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#869632"
+            android:background="#006B3C"
             android:layout_gravity="center"/>
 
         <Button
@@ -101,12 +128,15 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/next_exam"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:background="#99AB39"
+            android:background="#006B3C"
             android:layout_gravity="center" />
 
 

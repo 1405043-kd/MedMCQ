@@ -3,18 +3,17 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="20dp"
-    android:id="@+id/linearPopupMedicalPackage">
+    android:padding="10dp"
+    android:id="@+id/linearPopupMediDental">
 
     <TextView
-        android:id="@+id/textViewPopupMedicalPackage"
+        android:id="@+id/textViewPopupMediDental"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="আপনার একাউন্ট থেকে ১০০ টাকা কেটে নেয়া হবে। আপনি কি রাজি?"
+        android:text="এই পরীক্ষা দেয়ার জন্য আপনার একাউন্ট থেকে ৩ টাকা কেটে নেয়া হবে।"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="#ffffff"
-        />
+        android:textColor="#fff"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -25,26 +24,26 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="হ্যাঁ"
-            android:textSize="18sp"
+            android:text="পরীক্ষা দিন"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginRight="10dp"
             android:padding="10dp"
             android:background="@android:color/holo_green_light"
             android:textColor="@android:color/white"
-            android:id="@+id/buttonPopupMedicalPackageConfirm"/>
+            android:id="@+id/buttonPopupMediDentalExam"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:padding="10dp"
-            android:text="না"
-            android:textSize="18sp"
+            android:text="প্রশ্নপত্র দেখুন"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:background="#ff0000"
             android:textColor="@android:color/white"
-            android:id="@+id/buttonPopupMedicalPackageCancel"/>
+            android:id="@+id/buttonPopupMediDentalSeeQstn"/>
     </LinearLayout>
 
 

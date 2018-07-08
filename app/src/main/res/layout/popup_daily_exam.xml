@@ -3,8 +3,19 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="10dp"
+    android:padding="5dp"
+    android:layout_margin="10dp"
     android:id="@+id/linearPopupDailyExam">
+
+    <TextView
+        android:id="@+id/textViewPopupDailyExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="পরীক্ষাটি দিতে চাইলে আপনার একাউন্ট থেকে ৩ টাকা কেটে নেয়া হবে।"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"/>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -16,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="পরীক্ষা দিন"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginRight="10dp"
             android:padding="10dp"
@@ -30,7 +41,7 @@
             android:layout_marginLeft="10dp"
             android:padding="10dp"
             android:text="র‍্যাংক দেখুন"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:background="#ff0000"
             android:textColor="@android:color/white"

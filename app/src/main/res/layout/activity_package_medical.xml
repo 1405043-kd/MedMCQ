@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PackageActivity"
     android:orientation="vertical"
-    android:background="#1ABC9C">
+    android:background="#d1f1eb"
+    android:paddingBottom="20dp">
 
     <LinearLayout
         android:id="@+id/linearLayoutMedicalPackage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#f6ffd5"
+        android:background="#f0f8ff"
         android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
+        android:paddingBottom="30dp"
         >
 
         <TextView
@@ -46,7 +47,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:text="  তুমি চাইলে ১০০ টাকা দিয়ে প্যাকেজটা কিনতে পারো।"
-            android:textColor="@android:color/holo_green_light"
+            android:textColor="@android:color/holo_green_dark"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -61,23 +62,24 @@
             android:textStyle="bold"
             />
 
+        <Button
+            android:id="@+id/button_medicalPackage_Buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#006B3C"
+            android:layout_marginTop="10dp"
+
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="প্যাকেজ কিনুন"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"/>
 
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button_medicalPackage_Buy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_dark"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:text="প্যাকেজ কিনুন"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#ffffff"/>
 
 
 
-</LinearLayout>
+</ScrollView>

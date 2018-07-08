@@ -225,7 +225,7 @@ public class ChapterActivity extends AppCompatActivity{
 //                startActivity(intent);
 
                 final String chapterName = (String) adapterView.getItemAtPosition(i);
-                final String apiStr= chapterName + " অধ্যায় থেকে ৫০ টি প্রশ্ন দিয়ে পরীক্ষা দিন। পরীক্ষাটি দিতে হলে আপনার একাউন্ট থেকে ৫ টাকা কেটে নেয়া " +
+                final String apiStr= chapterName + " অধ্যায় এর প্রশ্ন দিয়ে পরীক্ষা দিন। পরীক্ষাটি দিতে হলে আপনার একাউন্ট থেকে ৩ টাকা কেটে নেয়া " +
                         "হবে।";
 
 
@@ -259,6 +259,7 @@ public class ChapterActivity extends AppCompatActivity{
                 linearPopup.setBackgroundColor(Color.parseColor("#2D2419"));
                 textViewPopup.setText(apiStr);
                 popupWindow = new PopupWindow(customView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
+                //popupWindow.showAtLocation(linearLayout1,Gravity.CENTER,0, 0);
                 // display the popup window
 
                 //initiate popupWindow
@@ -333,6 +334,8 @@ public class ChapterActivity extends AppCompatActivity{
                                 public void onClick(View v) {
                                     popupWindow.dismiss();
                                     Intent intent = new Intent(ChapterActivity.this, ChapterQuestionActivity.class);
+
+                                   // Intent intent = new Intent(ChapterActivity.this, ResultActivity.class);
                                     intent.putExtra("apiStr", toSendString);
                                     startActivity(intent);
                                 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#1ABC9C"
+    android:background="#d1f1eb"
     android:id="@+id/linearLayout1">
 
     <ListView

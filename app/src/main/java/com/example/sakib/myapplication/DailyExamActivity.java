@@ -12,6 +12,22 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.sakib.myapplication.models.ExamHistory;
+import com.example.sakib.myapplication.models.QuestionClient;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DailyExamActivity extends AppCompatActivity {
 
@@ -40,10 +56,12 @@ public class DailyExamActivity extends AppCompatActivity {
     Button buttonDailyExam23;
     Button buttonDailyExam24;
     Button buttonDailyExam25;
-
+    TextView popUpText;
 
     Button examButton;
     Button rankButton;
+    public boolean checker=false;
+    private List<ExamHistory> e_historys=new ArrayList<ExamHistory>();
 
     LinearLayout linearLayoutPopup;
     LinearLayout linearLayoutMain;
@@ -105,13 +123,17 @@ public class DailyExamActivity extends AppCompatActivity {
         buttonAction(buttonDailyExam24);
         buttonAction(buttonDailyExam25);
 
+        FirebaseAuth mAuth;
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
 
+        final Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("http://missiondmc.ml/")
+                //    .baseUrl("https://api.github.com/")
+                .addConverterFactory(GsonConverterFactory.create());
 
-
-
-
-
-
+        Retrofit retrofit = builder.build();
+        QuestionClient questionClient = retrofit.create(QuestionClient.class);
 
     }
 
@@ -124,7 +146,7 @@ public class DailyExamActivity extends AppCompatActivity {
                 View customView =layoutInflater.inflate(R.layout.popup_daily_exam,null);
                 examButton = (Button) customView.findViewById(R.id.buttonPopupDailyExam);
                 rankButton = (Button) customView.findViewById(R.id.buttonPopupDailyExamRankShow);
-
+                popUpText=(TextView) findViewById(R.id.textViewPopupDailyExam);
                 linearLayoutPopup = (LinearLayout) customView.findViewById(R.id.linearPopupDailyExam);
                 linearLayoutPopup.setBackgroundColor(Color.parseColor("#2D2419"));
 
@@ -134,13 +156,100 @@ public class DailyExamActivity extends AppCompatActivity {
                 // popupWindow.setOutsideTouchable(true);
                 popupWindow.update();
 
+
+
                 examButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         popupWindow.dismiss();
-                        Intent intent = new Intent(DailyExamActivity.this, ChapterQuestionActivity.class);
-                        intent.putExtra("apiStr",button.getText());
-                        startActivity(intent);
+
+                        final String toSendString= (String) button.getText();
+                        FirebaseAuth mAuth;
+                        mAuth = FirebaseAuth.getInstance();
+                        FirebaseUser user = mAuth.getCurrentUser();
+
+
+                        final Retrofit.Builder builder = new Retrofit.Builder()
+                                .baseUrl("http://missiondmc.ml/")
+                                //    .baseUrl("https://api.github.com/")
+                                .addConverterFactory(GsonConverterFactory.create());
+
+                        Retrofit retrofit = builder.build();
+                        QuestionClient questionClient = retrofit.create(QuestionClient.class);
+
+                        Call<List<ExamHistory>> call= questionClient.e_history_user(user.getUid());
+                        final ExamHistory bought=new ExamHistory(user.getUid(), user.getDisplayName(),0, toSendString, "C", (float) 0.0);
+
+
+
+                        call.enqueue(new Callback<List<ExamHistory>>() {
+                            @Override
+                            public void onResponse(Call<List<ExamHistory>> call, Response<List<ExamHistory>> response) {
+                                //System.out.println("hcud");
+                                checker=false;
+
+                                e_historys = response.body();
+
+
+                                for (ExamHistory curInstance: e_historys) {
+                                    String checkerStr=curInstance.getQuestionName();
+                                    if(checkerStr.equals(toSendString)) {
+                                        checker = true;
+                                    }
+                                }
+
+                                if(checker==false) {
+
+                                    final Retrofit.Builder builder = new Retrofit.Builder()
+                                            .baseUrl("http://missiondmc.ml/")
+                                            //    .baseUrl("https://api.github.com/")
+                                            .addConverterFactory(GsonConverterFactory.create());
+
+                                    Retrofit retrofit = builder.build();
+                                    QuestionClient cClient = retrofit.create(QuestionClient.class);
+
+
+                                    Call<ExamHistory> calle= cClient.post_e_history(bought);
+
+                                    calle.enqueue(new Callback<ExamHistory>() {
+                                        @Override
+                                        public void onResponse(Call<ExamHistory> call, Response<ExamHistory> response) {
+                                            Toast.makeText(DailyExamActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+                                            //System.out.print("FUFU"+ response.body());
+
+                                            Intent intent = new Intent(DailyExamActivity.this, ChapterQuestionActivity.class);
+                                            intent.putExtra("apiStr",button.getText());
+                                            startActivity(intent);
+
+                                        }
+
+                                        @Override
+                                        public void onFailure(Call<ExamHistory> call, Throwable t) {
+                                            Toast.makeText( DailyExamActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
+
+
+
+
+                                }
+                                else {
+                                    Intent intent = new Intent(DailyExamActivity.this, AboutUsActivity.class);
+                                    //intent.putExtra("apiStr", toSendString);
+                                    startActivity(intent);
+                                }
+
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<List<ExamHistory>> call, Throwable t) {
+                                Toast.makeText(DailyExamActivity.this, "error :(", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+
 
                     }
                 });
@@ -148,6 +257,7 @@ public class DailyExamActivity extends AppCompatActivity {
                 rankButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        popupWindow.dismiss();
                         Intent intent = new Intent(DailyExamActivity.this, RankActivity.class);
                         intent.putExtra("apiStr",button.getText());
                         startActivity(intent);

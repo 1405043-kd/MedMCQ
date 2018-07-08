@@ -1,17 +1,24 @@
 package com.example.sakib.myapplication;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,11 +47,13 @@ import static com.example.sakib.myapplication.R.color.black;
 import static com.example.sakib.myapplication.R.color.red;
 
 public class ChapterQuestionActivity extends AppCompatActivity {
-    private static final long START_TIME_IN_MILLIS = 60000;
+    private static final long WARN_TIME_IN_MILLIS = 10000;
+    private static final long JUST_TIME_IN_MILLIS = 60000;
     private TextView mTextViewCountDown;
     private static CountDownTimer mCountDownTimer;
-    private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
-    ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 300);
+    private long mTimeLeftInMillis=JUST_TIME_IN_MILLIS;
+    private long mWarningTime = WARN_TIME_IN_MILLIS;
+    ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 200);
     private ProgressBar spinner;
     private String part1="";
     private String part2="";
@@ -56,6 +65,56 @@ public class ChapterQuestionActivity extends AppCompatActivity {
     Button buttonSubmit;
     String []answers;
     List<Questions> questions=new ArrayList<Questions>();
+
+    Button buttonPopupYes;
+    Button buttonPopupNo;
+    LinearLayout linearLayout1;
+    LinearLayout linearPopup;
+    TextView textViewPopup;
+    PopupWindow popupWindow;
+
+    Button buttonPopupSubmitYes;
+    Button buttonPopupSubmitNo;
+    LinearLayout linearLayout11;
+    LinearLayout linearPopup11;
+    TextView textViewPopup11;
+    PopupWindow popupWindow2;
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+
+        LayoutInflater layoutInflater = (LayoutInflater) ChapterQuestionActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View customView =layoutInflater.inflate(R.layout.popup_backpress_exam,null);
+        buttonPopupYes = (Button) customView.findViewById(R.id.buttonPopupBackpressYes);
+        buttonPopupNo = (Button) customView.findViewById(R.id.buttonPopupBackpressNo);
+        linearLayout1 = (LinearLayout) findViewById(R.id.linearLayoutQuestionBack);
+        textViewPopup = (TextView) customView.findViewById(R.id.textViewPopupBack);
+        linearPopup =(LinearLayout) customView.findViewById(R.id.linearPopupBack);
+        linearPopup.setBackgroundColor(Color.parseColor("#2D2419"));
+        //textViewPopup.setText(apiStr);
+        popupWindow = new PopupWindow(customView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+
+        popupWindow.showAtLocation(linearLayout1, Gravity.CENTER, 0, 0);
+        popupWindow.update();
+
+        buttonPopupYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupWindow.dismiss();
+                mCountDownTimer.cancel();
+                mCountDownTimer=null;
+                ChapterQuestionActivity.super.onBackPressed();
+            }
+        });
+        buttonPopupNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupWindow.dismiss();
+            }
+        });
+    }
+
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +132,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 
         questionList = (ListView) findViewById(R.id.question_pagination_list);
         mTextViewCountDown = (TextView) findViewById(R.id.text_view_countdown);
-        mTextViewCountDown.setBackgroundColor(R.color.black);
+        mTextViewCountDown.setBackgroundColor(Color.parseColor("#000000"));
         mTextViewCountDown.setVisibility(View.GONE);
 
         final Retrofit.Builder builder = new Retrofit.Builder()
@@ -118,31 +177,38 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         call_cq.enqueue(new Callback<List<Questions>>() {
             @Override
             public void onResponse(Call<List<Questions>> call, Response<List<Questions>> response) {
-                System.out.println("hcud");
-
-                questions = response.body();
-
-                answers=new String[questions.size()];
-
-                questionList.setAdapter(new QuestionAdapter(ChapterQuestionActivity.this, questions, answers));
-
-                questionList.setOnItemClickListener(new ListView.OnItemClickListener(){
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        Questions questions=(Questions) adapterView.getItemAtPosition(i);
+               // System.out.println("hcudFUFUFUF"+response.body().size());
 
 
-                  //      Toast.makeText(ChapterQuestionActivity.this, questions.getQuestion(), Toast.LENGTH_SHORT).show();
+                try {
+                    questions = response.body();
+                    answers = new String[questions.size()];
+                    questionList.setAdapter(new QuestionAdapter(ChapterQuestionActivity.this, questions, answers));
 
-                    }
-                });
+                    questionList.setOnItemClickListener(new ListView.OnItemClickListener(){
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            Questions questions=(Questions) adapterView.getItemAtPosition(i);
 
-                spinner.setVisibility(View.GONE);
-                buttonSubmit.setVisibility(View.VISIBLE);
-                mTextViewCountDown.setVisibility(View.VISIBLE);
-                int nx= questions.size();
 
-                startTimer(nx);
+                            //      Toast.makeText(ChapterQuestionActivity.this, questions.getQuestion(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+                    spinner.setVisibility(View.GONE);
+                    buttonSubmit.setVisibility(View.VISIBLE);
+                    mTextViewCountDown.setVisibility(View.VISIBLE);
+                    int nx= questions.size();
+
+                    startTimer(nx);
+
+                }
+                catch (Exception e){
+                    Intent intent = new Intent(ChapterQuestionActivity.this, AboutUsActivity.class);
+                    startActivity(intent);
+                }
+
 
 
 
@@ -150,54 +216,90 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                 buttonSubmit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        /////////////////////////////popup
 
-                        mCountDownTimer.cancel();
+                        LayoutInflater layoutInflater = (LayoutInflater) ChapterQuestionActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View customView =layoutInflater.inflate(R.layout.popup_submit,null);
+                        buttonPopupSubmitYes = (Button) customView.findViewById(R.id.buttonPopupSubmitYes);
+                        buttonPopupSubmitNo = (Button) customView.findViewById(R.id.buttonPopupSubmitNo);
+                        linearLayout11 = (LinearLayout) findViewById(R.id.linearLayoutQuestionBack);
+                        textViewPopup11 = (TextView) customView.findViewById(R.id.textViewPopupSubmit);
+                        linearPopup11 =(LinearLayout) customView.findViewById(R.id.linearPopupSubmit);
+                        linearPopup11.setBackgroundColor(Color.parseColor("#2D2419"));
+                        //textViewPopup.setText(apiStr);
+                        popupWindow2 = new PopupWindow(customView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
 
-                        float total=0;
+                        popupWindow2.showAtLocation(linearLayout11, Gravity.CENTER, 0, 0);
+                        popupWindow2.update();
+
+                        buttonPopupSubmitYes.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                popupWindow2.dismiss();
+                                mCountDownTimer.cancel();
+                                mCountDownTimer=null;
+                                float total=0;
 
 //                        Toast.makeText(ChapterQuestionActivity.this, answers[0]+answers[1]+answers[2],Toast.LENGTH_SHORT).show();
-                        for(int ii=0; ii<questions.size();ii++)
-                        {
+                                for(int ii=0; ii<questions.size();ii++)
+                                {
 
-                            System.out.println(questions.size()+" ybo "+answers.length);
-                            String ans= answers[ii];
-                            System.out.println("wohowo"+Integer.toString(ii+1)+ans+"wohowo"+questions.get(ii).getCorrectAns());
+                                    System.out.println(questions.size()+" ybo "+answers.length);
+                                    String ans= answers[ii];
+                                    System.out.println("wohowo"+Integer.toString(ii+1)+ans+"wohowo"+questions.get(ii).getCorrectAns());
 //                            answers[ii]=answers[ii]+"( haha )"+ "lol(DE)";
-                            if(ans!=null) {
-                                //ans = answers[ii].substring(answers[ii].indexOf("(") + 1, answers[ii].indexOf(")"));
-                                //answers[ii]=ans;
-                                Toast.makeText(ChapterQuestionActivity.this, ans, Toast.LENGTH_SHORT).show();
-                                if (questions.get(ii).getCorrectAns().contains(ans))
-                                    total += 1;
-                                else
-                                    total -= 0.25;
-                                System.out.println(ans + "yo" + Float.toString(total) + " " + questions.get(ii).getCorrectAns() + " yobabes");
+                                    if(ans!=null) {
+                                        //ans = answers[ii].substring(answers[ii].indexOf("(") + 1, answers[ii].indexOf(")"));
+                                        //answers[ii]=ans;
+                                    ////    Toast.makeText(ChapterQuestionActivity.this, ans, Toast.LENGTH_SHORT).show();
+                                        if (questions.get(ii).getCorrectAns().contains(ans))
+                                            total += 1;
+                                        else
+                                            total -= 0.25;
+                                        System.out.println(ans + "yo" + Float.toString(total) + " " + questions.get(ii).getCorrectAns() + " yobabes");
+                                    }
+                                }
+
+                                FirebaseAuth mAuth;
+                                mAuth = FirebaseAuth.getInstance();
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                ExamHistory examHistory;
+
+                                if(apiStr.contains("DAILY")){
+                                    examHistory = new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), apiStr, "C", total);
+                                }
+                                else {
+                                    if (tabuName.contains("C"))
+                                        examHistory = new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part2, "C", total);
+                                    else
+                                        examHistory = new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part1, "X", total);
+                                }
+                                sendExamHistory(examHistory);
+
+                            ////    Toast.makeText(ChapterQuestionActivity.this, Float.toString(total), Toast.LENGTH_SHORT).show();
+                                Bundle bundle=new Bundle();
+                                String listSerializedToJson = new Gson().toJson(questions);
+                                //    bundle.putString("questions",listSerializedToJson);
+                                List<Questions> ques=questions;
+                                //  bundle.putParcelableArrayList("que", (ArrayList<? extends Parcelable>) ques);
+                                bundle.putString("que",listSerializedToJson);
+                                bundle.putStringArray("ans",answers);
+                                bundle.putFloat("res",total);
+
+                                launchActivityResult(bundle);
                             }
-                        }
+                        });
+                        buttonPopupSubmitNo.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                popupWindow2.dismiss();
+                            }
+                        });
 
-                        FirebaseAuth mAuth;
-                        mAuth = FirebaseAuth.getInstance();
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        ExamHistory examHistory;
 
-                        if(tabuName.contains("C"))
-                            examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part2, "C", total);
-                        else
-                            examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part1, "X", total);
+                        /////////////////////////
 
-                        sendExamHistory(examHistory);
 
-                        Toast.makeText(ChapterQuestionActivity.this, Float.toString(total), Toast.LENGTH_SHORT).show();
-                        Bundle bundle=new Bundle();
-                        String listSerializedToJson = new Gson().toJson(questions);
-                    //    bundle.putString("questions",listSerializedToJson);
-                        List<Questions> ques=questions;
-                      //  bundle.putParcelableArrayList("que", (ArrayList<? extends Parcelable>) ques);
-                        bundle.putString("que",listSerializedToJson);
-                        bundle.putStringArray("ans",answers);
-                        bundle.putFloat("res",total);
-
-                        launchActivityResult(bundle);
                     }
                 });
 
@@ -224,13 +326,13 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         call.enqueue(new Callback<ExamHistory>() {
             @Override
             public void onResponse(Call<ExamHistory> call, Response<ExamHistory> response) {
-                Toast.makeText(ChapterQuestionActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(ChapterQuestionActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
                 System.out.print("FUFU"+ response.body());
             }
 
             @Override
             public void onFailure(Call<ExamHistory> call, Throwable t) {
-                Toast.makeText(ChapterQuestionActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(ChapterQuestionActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -354,26 +456,72 @@ public class ChapterQuestionActivity extends AppCompatActivity {
     }
 
     private void startTimer(int n) {
-        int x=40000*n;
+        int x=30000*n;
 
         mCountDownTimer = new CountDownTimer(x,1000) {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onTick(long millisUntilFinished) {
                 mTimeLeftInMillis = millisUntilFinished;
-                Toast.makeText(ChapterQuestionActivity.this, "start"+mTimeLeftInMillis, Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(ChapterQuestionActivity.this, "start"+mTimeLeftInMillis, Toast.LENGTH_SHORT).show();
                 updateCountDownText();
-                if (millisUntilFinished<=10000) {
-                    mTextViewCountDown.setBackgroundColor(red);
-                    toneGen1.startTone(300);
-
+                if (millisUntilFinished<=WARN_TIME_IN_MILLIS) {
+                    toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
+                    mTextViewCountDown.setBackgroundColor(Color.parseColor("#FF0000"));
                 }
             }
 
             @Override
             public void onFinish() {
                 toneGen1.stopTone();
-                buttonSubmit.performClick();
+                mCountDownTimer.cancel();
+                mCountDownTimer=null;
+                float total=0;
+
+//                        Toast.makeText(ChapterQuestionActivity.this, answers[0]+answers[1]+answers[2],Toast.LENGTH_SHORT).show();
+                for(int ii=0; ii<questions.size();ii++)
+                {
+
+                    System.out.println(questions.size()+" ybo "+answers.length);
+                    String ans= answers[ii];
+                    System.out.println("wohowo"+Integer.toString(ii+1)+ans+"wohowo"+questions.get(ii).getCorrectAns());
+//                            answers[ii]=answers[ii]+"( haha )"+ "lol(DE)";
+                    if(ans!=null) {
+                        //ans = answers[ii].substring(answers[ii].indexOf("(") + 1, answers[ii].indexOf(")"));
+                        //answers[ii]=ans;
+                    //    Toast.makeText(ChapterQuestionActivity.this, ans, Toast.LENGTH_SHORT).show();
+                        if (questions.get(ii).getCorrectAns().contains(ans))
+                            total += 1;
+                        else
+                            total -= 0.25;
+                        System.out.println(ans + "yo" + Float.toString(total) + " " + questions.get(ii).getCorrectAns() + " yobabes");
+                    }
+                }
+
+                FirebaseAuth mAuth;
+                mAuth = FirebaseAuth.getInstance();
+                FirebaseUser user = mAuth.getCurrentUser();
+                ExamHistory examHistory;
+
+                if(tabuName.contains("C"))
+                    examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part2, "C", total);
+                else
+                    examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part1, "X", total);
+
+                sendExamHistory(examHistory);
+
+           ////     Toast.makeText(ChapterQuestionActivity.this, Float.toString(total), Toast.LENGTH_SHORT).show();
+                Bundle bundle=new Bundle();
+                String listSerializedToJson = new Gson().toJson(questions);
+                //    bundle.putString("questions",listSerializedToJson);
+                List<Questions> ques=questions;
+                //  bundle.putParcelableArrayList("que", (ArrayList<? extends Parcelable>) ques);
+                bundle.putString("que",listSerializedToJson);
+                bundle.putStringArray("ans",answers);
+                bundle.putFloat("res",total);
+
+                launchActivityResult(bundle);
+                //buttonSubmit.performClick();
             }
         }.start();
 
@@ -384,7 +532,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
 
         String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-        Toast.makeText(ChapterQuestionActivity.this, "asf"+timeLeftFormatted, Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(ChapterQuestionActivity.this, "asf"+timeLeftFormatted, Toast.LENGTH_SHORT).show();
         mTextViewCountDown.setText(timeLeftFormatted);
      //   toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
     }
