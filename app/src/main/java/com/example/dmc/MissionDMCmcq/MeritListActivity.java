@@ -3,10 +3,13 @@ package com.example.dmc.MissionDMCmcq;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dmc.MissionDMCmcq.models.Adapters.ExamHistoryAdapter;
+import com.example.dmc.MissionDMCmcq.models.Adapters.MeritListAdapter;
 import com.example.dmc.MissionDMCmcq.models.ExamHistory;
 import com.example.dmc.MissionDMCmcq.models.QuestionClient;
 import com.example.dmc.MissionDMCmcq.models.Questions;
@@ -26,13 +29,21 @@ public class MeritListActivity extends AppCompatActivity {
     String apiStr="";
     ProgressBar progressBar;
     List<ExamHistory> results=new ArrayList<ExamHistory>();
-    TextView merView;
+    TextView rankView;
+    TextView nameView;
+    TextView numberView;
+
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_merit_list);
-        merView= (TextView) findViewById(R.id.meritLista);
+        listView = (ListView) findViewById(R.id.rankList);
+
+       // rankView= (TextView) findViewById(R.id.id_rank_merit2);
+
+
 
         progressBar=(ProgressBar) findViewById(R.id.progressBar_meritList);
         Bundle extras = getIntent().getExtras();
@@ -63,13 +74,17 @@ public class MeritListActivity extends AppCompatActivity {
                 results= response.body();
                 Collections.sort(results);
 
-                String jaDe="";
-                int i=1;
-                for (ExamHistory curInstance: results) {
-                    jaDe+=i+". "+curInstance.getUserName()+" "+String.valueOf(curInstance.getMarks())+"\n";
-                    i++;
-                }
-                merView.setText(jaDe);
+                listView.setAdapter(new MeritListAdapter(MeritListActivity.this, results));
+
+
+
+//                String jaDe="";
+//                int i=1;
+//                for (ExamHistory curInstance: results) {
+//                    jaDe+=i+".       "+curInstance.getUserName()+"         "+String.valueOf(curInstance.getMarks())+"\n";
+//                    i++;
+//                }
+//                rankView.setText(jaDe);
 
                 //System.out.print(results.get(0).getUserName()+results.get(0).getMarks()+"coHu");
                 //Toast.makeText(MeritListActivity.this, String.valueOf(results.get(0).getUserName())+"ugan", Toast.LENGTH_SHORT).show();

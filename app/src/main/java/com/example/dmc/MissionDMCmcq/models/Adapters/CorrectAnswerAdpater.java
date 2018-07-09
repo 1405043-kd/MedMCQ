@@ -65,7 +65,7 @@ public class CorrectAnswerAdpater extends ArrayAdapter<Questions>{
         holder.ro2.setText(option2);
         holder.ro3.setText(option3);
         holder.ro4.setText(option4);
-        holder.co.setText("Your Ans: "+answers[position]+", Correct Ans: "+correctAns);
+        holder.co.setText("Your Ans: "+answers[position]+"|| Correct Ans: "+correctAns);
         if(holder.isChecked==false) {
             holder.isChecked=true;
 
