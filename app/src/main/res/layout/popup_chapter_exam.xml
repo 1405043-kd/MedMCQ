@@ -30,19 +30,10 @@
             android:padding="10dp"
             android:background="@android:color/holo_green_light"
             android:textColor="@android:color/white"
-            android:id="@+id/buttonPopupExam"/>
+            android:id="@+id/buttonPopupExam"
+            android:layout_gravity="center"
+            android:gravity="center"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:padding="10dp"
-            android:text="প্রশ্নপত্র দেখুন"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:background="#ff0000"
-            android:textColor="@android:color/white"
-            android:id="@+id/buttonPopupSeeQstn"/>
     </LinearLayout>
 
 

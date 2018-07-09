@@ -147,7 +147,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ডাঃ গোলাম মোক্তাদির প্রিন্স"
+                android:text="ডাঃ গোলাম মোক্তাদীর প্রিন্স"
                 android:layout_marginTop="2dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -284,8 +284,20 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="জাবের মোঃ আব্দুল্লাহ (৪৬ তম), সেশন ২০১৭-১৮"
+                android:text="মোঃ সামিউল ইসলাম"
                 android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="জাবের মোঃ আব্দুল্লাহ (৪৬ তম), সেশন ২০১৭-১৮"
+                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:textSize="14sp"
