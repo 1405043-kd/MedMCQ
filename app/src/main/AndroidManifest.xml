@@ -190,8 +190,9 @@
             android:label="আর্কাইভ প্রশ্ন উত্তর" />
         <activity
             android:name=".AboutUsActivity"
-            android:label="আমাদের সম্পর্কে"></activity>
-        <activity android:name=".NOTREADYActivity"></activity>
+            android:label="আমাদের সম্পর্কে" />
+        <activity android:name=".NOTREADYActivity" />
+        <activity android:name=".UserManualActivity"></activity>
     </application>
 
 </manifest>

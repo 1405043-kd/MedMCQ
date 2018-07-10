@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RechargeActivity"
+    android:orientation="vertical"
+    android:background="#f0f8ff"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/rechargeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mission DMC mcq"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/holo_green_dark"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:background="#ffffff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us1"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:background="#ffffff">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ব্যবহারবিধি"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/holo_red_dark"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="হোমপেজে রয়েছে ৪ টি বাটনঃ ১.মেডিকেল/ডেন্টাল ভর্তি পরীক্ষা ২.ভার্সিটি জীববিজ্ঞান
+৩.প্যাকেজ ও ৪. রিচার্জ করুন"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"
+               />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="১.মেডিকেল/ডেন্টাল ভর্তি পরীক্ষা"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এই বাটনে ক্লিক করলে আপনি অ্যাপের মেডিকেল সেকশনে প্রবেশ করবেন। এখানে আছে ১.নোটিস বোর্ড
+২.পরীক্ষা দিন ২. আর্কাইভ ৩.বিষয়ভিত্তিক প্রস্তুতি ৪.বিগত সালের মেডিকেল প্রশ্ন ৫.বিগত সালের ডেন্টাল প্রশ্ন ৬.লেকচার নোটস"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="নোটিস বোর্ড"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এখানে ডেইলি পরীক্ষার সময়সূচী ও অন্যান্য প্রয়োজনীয় নোটিস জানিয়ে দেয়া হবে।"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="পরীক্ষা দিন"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এই বাটনে ক্লিক করলে আপনি ডেইলি এক্সাম দেয়ার পেজে যাবেন। মাত্র ৩ টাকার বিনিময়ে আপনি প্রতিটি ডেইলি এক্সাম এ
+অংশগ্রহণ করতে পারবেন। ডেইলি এক্সাম ২৪ ঘন্টার মাঝে যেকোন সময়ে দেয়া যাবে কিন্তু একবারের বেশি একই পরীক্ষায় অংশগ্রহণ করা যাবেনা। ঐ দিনশেষে রাত ১২ টায়
+ঐ পরীক্ষার উত্তরপত্র উন্মুক্ত করে দেয়া হবে। উত্তরপত্র দেখতে পাবেন আর্কাইভে। আর্কাইভে গিয়ে ডেইলি এক্সামের নাম সম্বলিত বাটনে ক্লিক করলেই উত্তরপত্র দেখাবে।"
+                android:textSize="16sp"
+                android:layout_marginTop="30dp"
+                android:layout_margin="10dp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="আর্কাইভ"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="আপনি যেসব পরীক্ষায় অংশগ্রহণ করেছেন সেগুলো এখানে পাওয়া যাবে। পরীক্ষাগুলোর বাটনে ক্লিক করলে আপনি
+ঐ পরীক্ষার উত্তরপত্র দেখতে পাবেন।"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="বিষয়ভিত্তিক প্রস্তুতি"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এখানে রয়েছে পদার্থ, রসায়ন, জীববিজ্ঞান, সাধারণ জ্ঞান ও ইংরেজি বিষয়ের চ্যাপ্টারভিত্তিক পরীক্ষা। প্রতিটি পরীক্ষায় অংশগ্রহণ করতে
+চাইলে শুধুমাত্র প্রথমবার আপনার অ্যাকাউন্ট থেকে ৩ টাকা কেটে নেয়া হবে। পরবর্তীতে ঐ পরীক্ষায় অংশ নেয়ার জন্য আর কোনো টাকা কাটা হবেনা। আর আপনি প্যাকেজ কিনলে
+সব বিষয়ের সকল অধ্যায়ভিত্তিক পরীক্ষা আপনার জন্য উন্মুক্ত হয়ে যাবে।"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="বিগত সালের মেডিকেল প্রশ্ন"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এখানে বিগত সালের মেডিকেল ভর্তি পরীক্ষার প্রশ্নে পরীক্ষা দিতে পারবেন। প্রতিটি পরীক্ষা দিতে আপনার লাগবে ৩ টাকা। মেডিকেল প্যাকেজ
+কিনলে সকল পরীক্ষা উন্মুক্ত হয়ে যাবে।"
+                android:textSize="16sp"
+                android:layout_marginTop="30dp"
+                android:layout_margin="10dp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="বিগত সালের ডেন্টাল প্রশ্ন"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এখানে বিগত সালের ডেন্টাল ভর্তি পরীক্ষার প্রশ্নে পরীক্ষা দিতে পারবেন। প্রতিটি পরীক্ষা দিতে আপনার লাগবে ৩ টাকা। মেডিকেল প্যাকেজ
+কিনলে সকল পরীক্ষা উন্মুক্ত হয়ে যাবে।"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="লেকচার নোটস"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এখানে বিভিন্ন টপিকের উপর লেকচার আপ্লোড দেয়া হবে।"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="২.ভার্সিটি জীববিজ্ঞান"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এই অংশের কাজ চলছে। শীঘ্রই অ্যাপ এ উন্মুক্ত করা হবে।"
+                android:textSize="16sp"
+                android:layout_marginTop="30dp"
+                android:layout_margin="10dp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="৩.প্যাকেজ"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এখানে আপনি মেডিকেল প্যাকেজ কিনতে পারবেন। প্যাকেজ কিনলে আলাদা করে আর প্রতিটি পরীক্ষার জন্য পে করা লাগবে না
+বিষয়ভিত্তিক সকল অধ্যায়, বিগত সালের মেডিকেল ও ডেন্টাল প্রশ্ন উন্মুক্ত হয়ে যাবে । ডেইলি এক্সামসমূহ প্যাকেজের আওতামুক্ত। প্যাকেজ কিনলেও প্রতিটি ডেইলি এক্সামের জন্য
+৩ টাকা করে পে করা লাগবে।"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="৪. রিচার্জ করুন"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="এখান থেকে আপনি আপনার একাউন্টে বিকাশ, রকেট (DBBL) ও অন্যান্য ব্যাংকের কার্ডের মাধ্যমে রিচার্জ করতে পারবেন।"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

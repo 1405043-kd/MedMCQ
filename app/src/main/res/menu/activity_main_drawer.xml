@@ -21,6 +21,11 @@
 
     <item android:title="">
         <menu>
+
+            <item
+                android:id="@+id/userManual"
+                android:icon="@drawable/icons8_about_filled_50"
+                android:title="ব্যবহারবিধি" />
             <item
                 android:id="@+id/goga"
                 android:icon="@drawable/icons8_about_filled_50"

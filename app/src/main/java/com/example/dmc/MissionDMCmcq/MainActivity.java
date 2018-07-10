@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity
     private CardView cardView_medi;
     private CardView cardView_varsity;
     private CardView cardView_notice;
+    private CardView cardView_recharge;
     private static final String TAG = "AccountFragment";
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     GoogleSignInClient mGoogleSignInClient;
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity
         cardView_medi = (CardView) findViewById(R.id.card_view1);
         cardView_varsity = (CardView) findViewById(R.id.card_view2);
         cardView_notice = (CardView) findViewById(R.id.card_view3);
+        cardView_recharge = (CardView) findViewById(R.id.card_view4);
 
         cardView_medi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,6 +121,13 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
 
                 launchActivity_notice();
+            }
+        });
+
+        cardView_recharge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchActivity_recharge();
             }
         });
 
@@ -176,6 +185,12 @@ public class MainActivity extends AppCompatActivity
 
     private void launchActivity_notice() {
         Intent intent = new Intent(this, PackageActivity.class);
+        startActivity(intent);
+    }
+
+    private void launchActivity_recharge()
+    {
+        Intent intent = new Intent(this, RechargeActivity.class);
         startActivity(intent);
     }
 
@@ -253,8 +268,10 @@ public class MainActivity extends AppCompatActivity
             FirebaseAuth.getInstance().signOut();
             LoginManager.getInstance().logOut();
             Signoutalready();
-
-
+        } else if(id == R.id.userManual)
+        {
+            Intent intent = new Intent(MainActivity.this, UserManualActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
