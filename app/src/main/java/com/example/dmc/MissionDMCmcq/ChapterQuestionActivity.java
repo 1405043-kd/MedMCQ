@@ -390,104 +390,104 @@ public class ChapterQuestionActivity extends AppCompatActivity {
     private String returnUrlX(String s) {
         if (s.contains("med")) {
             if (s.contains("২০১৬-২০১৭"))
-                return "2016/M";
+                return "2016M/M";
             else if (s.contains("২০১৭-২০১৮")) {
-                return "2017/M";
+                return "2017M/M";
             } else if (s.contains("২০১৫-২০১৬")) {
-                return "2015/M";
+                return "2015M/M";
             } else if (s.contains("২০১৪-২০১৫")) {
-                return "2014/M";
+                return "2014M/M";
             } else if (s.contains("২০১৩-২০১৪")) {
-                return "2013/M";
+                return "2013M/M";
             } else if (s.contains("২০১২-২০১৩")) {
-                return "2012/M";
+                return "2012M/M";
             } else if (s.contains("২০১১-২০১২")) {
-                return "2011/M";
+                return "2011M/M";
             } else if (s.contains("২০১০-২০১১")) {
-                return "2010/M";
+                return "2010M/M";
             } else if (s.contains("২০০৯-২০১০")) {
-                return "2009/M";
+                return "2009M/M";
             } else if (s.contains("২০০৮-২০০৯")) {
-                return "2008/M";
+                return "2008M/M";
             } else if (s.contains("২০০৭-২০০৮")) {
-                return "2007/M";
+                return "2007M/M";
             } else if (s.contains("২০০৬-২০০৭")) {
-                return "2006/M";
+                return "2006M/M";
             } else if (s.contains("২০০৫-২০০৬")) {
-                return "2005/M";
+                return "2005M/M";
             } else if (s.contains("২০০৪-২০০৫")) {
-                return "2004/M";
+                return "2004M/M";
             } else if (s.contains("২০০৩-২০০৪")) {
-                return "2003/M";
+                return "2003M/M";
             } else if (s.contains("২০০২-২০০৩")) {
-                return "2002/M";
+                return "2002M/M";
             } else if (s.contains("২০০১-২০০২")) {
-                return "2001/M";
+                return "2001M/M";
             } else if (s.contains("২০০০-২০০১")) {
-                return "2000/M";
+                return "2000M/M";
             } else if (s.contains("১৯৯৯-২০০০")) {
-                return "1999/M";
+                return "1999M/M";
             } else if (s.contains("১৯৯৮-১৯৯৯")) {
-                return "1998/M";
+                return "1998M/M";
             } else if (s.contains("১৯৯৭-১৯৯৮")) {
-                return "1997/M";
+                return "1997M/M";
             } else if (s.contains("১৯৯৬-১৯৯৭")) {
-                return "1996/M";
+                return "1996M/M";
             } else if (s.contains("১৯৯৫-১৯৯৬")) {
-                return "1995/M";
+                return "1995M/M";
             } else if (s.contains("১৯৯৪-১৯৯৫")) {
-                return "1994/M";
+                return "1994M/M";
             } else if (s.contains("১৯৯৩-১৯৯৪")) {
-                return "1993/M";
+                return "1993M/M";
             } else if (s.contains("১৯৯২-১৯৯৩")) {
-                return "1992/M";
+                return "1992M/M";
             } else if (s.contains("১৯৯১-১৯৯২")) {
-                return "1991/M";
+                return "1991M/M";
             } else if (s.contains("১৯৯০-১৯৯১")) {
-                return "1990/M";
+                return "1990M/M";
             } else if (s.contains("১৯৯০-১৯৯১(১)")) {
-                return "1990-1/M";
+                return "1990-1M/M";
             } else if (s.contains("১৯৮৯-১৯৯০")) {
-                return "1989/M";
+                return "1989M/M";
             } else if (s.contains("১৯৮৮-১৯৮৯")) {
-                return "1988/M";
+                return "1988M/M";
             }
 
         } else if (s.contains("den")) {
             if (s.contains("২০১৬-২০১৭"))
-                return "2016/D";
+                return "2016D/D";
             else if (s.contains("২০১০-২০১১")) {
-                return "2010/D";
+                return "2010D/D";
             } else if (s.contains("২০০৯-২০১০")) {
-                return "2009/D";
+                return "2009D/D";
             } else if (s.contains("২০০৮-২০০৯")) {
-                return "2008/D";
+                return "2008D/D";
             } else if (s.contains("২০০৭-২০০৮")) {
-                return "2007/D";
+                return "2007D/D";
             } else if (s.contains("২০০৬-২০০৭")) {
-                return "2006/D";
+                return "2006D/D";
             } else if (s.contains("২০০৫-২০০৬")) {
-                return "2005/D";
+                return "2005D/D";
             } else if (s.contains("২০০৪-২০০৫")) {
-                return "2004/D";
+                return "2004D/D";
             } else if (s.contains("২০০৩-২০০৪")) {
-                return "2003/D";
+                return "2003D/D";
             } else if (s.contains("২০০২-২০০৩")) {
-                return "2002/D";
+                return "2002D/D";
             } else if (s.contains("২০০১-২০০২")) {
-                return "2001/D";
+                return "2001D/D";
             } else if (s.contains("২০০০-২০০১")) {
-                return "2000/D";
+                return "2000D/D";
             } else if (s.contains("১৯৯৯-২০০০")) {
-                return "1999/D";
+                return "1999D/D";
             } else if (s.contains("১৯৯৮-১৯৯৯")) {
-                return "1998/D";
+                return "1998D/D";
             } else if (s.contains("১৯৯৭-১৯৯৮")) {
-                return "1997/D";
+                return "1997D/D";
             } else if (s.contains("১৯৯৬-১৯৯৭")) {
-                return "1996/D";
+                return "1996D/D";
             } else if (s.contains("১৯৯৫-১৯৯৬")) {
-                return "1995/D";
+                return "1995D/D";
             }
 
 
@@ -543,11 +543,16 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
                 ExamHistory examHistory;
 
-                if(tabuName.contains("C"))
-                    examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part2, "C", total);
-                else
-                    examHistory= new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part1, "X", total);
 
+                if(apiStr.contains("DAILY")){
+                    examHistory = new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), apiStr, "C", total);
+                }
+                else {
+                    if (tabuName.contains("C"))
+                        examHistory = new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part2, "C", total);
+                    else
+                        examHistory = new ExamHistory(user.getUid(), user.getDisplayName(), questions.get(0).getQuestionId(), part1, "X", total);
+                }
                 sendExamHistory(examHistory);
 
            ////     Toast.makeText(ChapterQuestionActivity.this, Float.toString(total), Toast.LENGTH_SHORT).show();

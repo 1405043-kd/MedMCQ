@@ -188,7 +188,7 @@ public class DailyExamActivity extends AppCompatActivity {
                         QuestionClient questionClient = retrofit.create(QuestionClient.class);
 
                         Call<List<ExamHistory>> call= questionClient.e_history_user(user.getUid());
-                        final ExamHistory bought=new ExamHistory(user.getUid(), user.getDisplayName(),0, toSendString, "C", (float) 0.0);
+                        final ExamHistory bought=new ExamHistory(user.getUid(), user.getDisplayName(),0, toSendString, "W", (float) 0.0);
 
 
 
@@ -204,7 +204,8 @@ public class DailyExamActivity extends AppCompatActivity {
                                 for (ExamHistory curInstance: e_historys) {
                                     String checkerStr=curInstance.getQuestionName();
                                     if(checkerStr.equals(toSendString)) {
-                                        checker = true;
+                                        if(!curInstance.getTableName().equals("W"))
+                                            checker = true;
                                     }
                                 }
 

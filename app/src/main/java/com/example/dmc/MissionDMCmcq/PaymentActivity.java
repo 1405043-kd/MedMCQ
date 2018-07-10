@@ -61,6 +61,7 @@ public class PaymentActivity extends AppCompatActivity {
         FirebaseAuth mAuth;
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
+        //mandatoryFieldModel = new MandatoryFieldModel("missiondmcadmissionaidlive","5B29E1782861136981",amount, user.getUid(), CurrencyType.BDT, SdkType.LIVE, SdkCategory.BANK_LIST);
         mandatoryFieldModel = new MandatoryFieldModel("missi5b1bf9e7c190f","missi5b1bf9e7c190f@ssl",amount, user.getUid(), CurrencyType.BDT, SdkType.TESTBOX, SdkCategory.BANK_LIST);
         customerFieldModel = new CustomerFieldModel(user.getDisplayName(), user.getEmail(), "Customer Address 1", "Customer Address 2", "Customer City", "Customer State", "Customer Post Code", "Customer Country", " Customer Phone", "Customer Fax");
 
