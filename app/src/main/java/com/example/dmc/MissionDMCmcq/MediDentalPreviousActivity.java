@@ -58,7 +58,7 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
         if (extras != null) {
             subName = extras.getString("subName");
         }
-        Toast.makeText(this, subName,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, subName,Toast.LENGTH_SHORT).show();
 
         chapterListView = (ListView) findViewById(R.id.chapter_pagination_list);
 
@@ -138,7 +138,7 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
                 final String chapterName=(String) adapterView.getItemAtPosition(i);
 
                 final String apiStr = subName + "/" + chapterName;
-                Toast.makeText(MediDentalPreviousActivity.this, apiStr, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MediDentalPreviousActivity.this, apiStr, Toast.LENGTH_SHORT).show();
 
 
                 //new code 07-07-2018
@@ -150,7 +150,7 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
                 textViewPopup11 = (TextView) customView.findViewById(R.id.textViewPopupMediDental);
                 linearPopup11 =(LinearLayout) customView.findViewById(R.id.linearPopupMediDental);
                 linearPopup11.setBackgroundColor(Color.parseColor("#2D2419"));
-                textViewPopup11.setText(chapterName + " এই পরীক্ষা দেয়ার জন্য আপনার একাউন্ট থেকে ৩ টাকা কেটে নেয়া হবে।");
+                textViewPopup11.setText(chapterName + " এই পরীক্ষা দেয়ার জন্য আপনার একাউন্ট থেকে শুধুমাত্র প্রথমবার ৩ টাকা কেটে নেয়া হবে।");
                 popupWindow2 = new PopupWindow(customView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
 
 
@@ -221,7 +221,7 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
                                     calle.enqueue(new Callback<ExamHistory>() {
                                         @Override
                                         public void onResponse(Call<ExamHistory> call, Response<ExamHistory> response) {
-                                            Toast.makeText(MediDentalPreviousActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+                                           // Toast.makeText(MediDentalPreviousActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
                                             System.out.print("FUFU"+ response.body());
 
                                             popupWindow2.dismiss();
@@ -234,7 +234,7 @@ public class MediDentalPreviousActivity extends AppCompatActivity{
 
                                         @Override
                                         public void onFailure(Call<ExamHistory> call, Throwable t) {
-                                            Toast.makeText( MediDentalPreviousActivity.this, "Fokinni taka vor", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText( MediDentalPreviousActivity.this, "আপনার একাঊন্টে টাকা নেই। রিচার্জ করুন।", Toast.LENGTH_SHORT).show();
 
                                         }
                                     });

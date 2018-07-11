@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ডাঃ তোফায়েল আহমেদ"
+                android:text="Mission DMC mcq team"
                 android:layout_marginTop="2dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -78,26 +78,6 @@
                 android:gravity="center"
                 android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ঢাকা মেডিকেল কলেজ "
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:textSize="16sp"
-                android:textColor="#000000"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="২০১২-২০১৩ সালের ভর্তি পরীক্ষায় জাতীয় মেধায় ৫ম স্থান অধিকারকারী "
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:textSize="16sp"
-                android:textColor="#000000"
-                android:gravity="center"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -126,6 +106,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ঢাকা মেডিকেল কলেজ "
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ডাঃ তোফায়েল আহমেদ"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ঢাকা মেডিকেল কলেজ "
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="২০১২-২০১৩ সালের ভর্তি পরীক্ষায় জাতীয় মেধায় ৫ম স্থান অধিকারকারী "
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"

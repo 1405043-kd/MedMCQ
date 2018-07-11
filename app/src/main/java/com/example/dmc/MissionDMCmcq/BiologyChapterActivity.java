@@ -33,7 +33,7 @@ public class BiologyChapterActivity extends AppCompatActivity{
         if (extras != null) {
             subName = extras.getString("subName");
         }
-        Toast.makeText(this, subName,Toast.LENGTH_SHORT).show();
+        //.makeText(this, subName,Toast.LENGTH_SHORT).show();
 
         chapterListView = (ListView) findViewById(R.id.chapter_pagination_list);
 
@@ -86,7 +86,7 @@ public class BiologyChapterActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String chapterName=(String) adapterView.getItemAtPosition(i);
-                Toast.makeText(BiologyChapterActivity.this,chapterName, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(BiologyChapterActivity.this,chapterName, Toast.LENGTH_SHORT).show();
                 String apiStr=subName+"/"+chapterName;
                 Intent intent = new Intent(BiologyChapterActivity.this, ChapterQuestionActivity.class);
                 intent.putExtra("apiStr",apiStr);

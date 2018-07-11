@@ -225,7 +225,7 @@ public class DailyExamActivity extends AppCompatActivity {
                                     calle.enqueue(new Callback<ExamHistory>() {
                                         @Override
                                         public void onResponse(Call<ExamHistory> call, Response<ExamHistory> response) {
-                                            Toast.makeText(DailyExamActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+                                           // Toast.makeText(DailyExamActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
                                             //System.out.print("FUFU"+ response.body());
 
                                             Intent intent = new Intent(DailyExamActivity.this, ChapterQuestionActivity.class);
@@ -236,7 +236,7 @@ public class DailyExamActivity extends AppCompatActivity {
 
                                         @Override
                                         public void onFailure(Call<ExamHistory> call, Throwable t) {
-                                            Toast.makeText( DailyExamActivity.this, "Check your internet connection!!!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText( DailyExamActivity.this, "আপনার একাঊন্টে টাকা নেই। রিচার্জ করুন।", Toast.LENGTH_SHORT).show();
                                         }
                                     });
 
@@ -247,9 +247,9 @@ public class DailyExamActivity extends AppCompatActivity {
                                 }
                                 else {
                                     Intent intent = new Intent(DailyExamActivity.this, NOTREADYActivity.class);
-                                    String string = toSendString + " এই পরীক্ষাতে ইতিমধ্যে আপনি অংশগ্রহণ করেছেন অথবা পরীক্ষাটি এখনো অনুষ্ঠিত হয়নি। " +
+                                    String string = toSendString + " এই পরীক্ষাতে ইতিমধ্যে আপনি অংশগ্রহণ করেছেন " +
                                             "একটি ডেইলি এক্সামে একবার মাত্র অংশগ্রহণ করা যাবে। রাত ১২ টার পর আর্কাইভে এই পরীক্ষার " +
-                                            "উত্তরপত্র উন্মুক্ত করে দেয়া হবে। পরীক্ষার সময়সূচী জানতে নোটিস বোর্ডে চোখ রাখুন।";
+                                            "উত্তরপত্র উন্মুক্ত করে দেয়া হবে। অন্য ডেইলি এক্সামের সময়সূচী জানতে নোটিস বোর্ডে চোখ রাখুন।";
 
                                     intent.putExtra("apiStr", string);
                                     startActivity(intent);

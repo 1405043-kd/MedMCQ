@@ -31,6 +31,10 @@
                 android:icon="@drawable/icons8_about_filled_50"
                 android:title="আমাদের সম্পর্কে" />
             <item
+                android:id="@+id/copyright"
+                android:icon="@drawable/icons8_about_filled_50"
+                android:title="কপিরাইট" />
+            <item
                 android:id="@+id/logout_shit"
                 android:icon="@drawable/icons8_shutdown_filled_50"
                 android:title="লগআউট" />

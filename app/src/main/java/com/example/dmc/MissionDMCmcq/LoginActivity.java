@@ -150,7 +150,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult connectionResult)
                     {
-                        Toast.makeText(LoginActivity.this, "Connection to Google Sign in failed...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Connection to Google Sign in failed", Toast.LENGTH_SHORT).show();
                     }
                 }).addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
 
@@ -160,7 +160,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(getApplicationContext(),"Button was Clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Button was Clicked", Toast.LENGTH_SHORT).show();
                 signIn();
             }
         });
@@ -237,7 +237,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        Toast.makeText(this, "firebase with google.", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "firebase with google.", Toast.LENGTH_SHORT).show();
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -268,14 +268,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void handleFacebookAccessToken(AccessToken token) {
         Log.d(TAG, "handleFacebookAccessToken:" + token);
-        Toast.makeText(LoginActivity.this, "ACCESS TOKEN FOR U BITCH..."+token.getToken(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(LoginActivity.this, "ACCESS TOKEN FOR U BITCH..."+token.getToken(), Toast.LENGTH_SHORT).show();
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "LOGIN DONE FOR U BITCH...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "LOGIN SUCCESSFUL!", Toast.LENGTH_SHORT).show();
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
@@ -283,7 +283,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             // updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(LoginActivity.this, "NO ACCESS FOR U BITCH...", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(LoginActivity.this, "NO ACCESS FOR U BITCH...", Toast.LENGTH_SHORT).show();
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             SendUserToLoginActivity();
                         }

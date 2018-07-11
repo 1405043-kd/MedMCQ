@@ -79,13 +79,13 @@ public class PackageBuyStatusActivity extends AppCompatActivity {
         call.enqueue(new Callback<ExamHistory>() {
             @Override
             public void onResponse(Call<ExamHistory> call, Response<ExamHistory> response) {
-                Toast.makeText(PackageBuyStatusActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
-                System.out.print("FUFU"+ response.body());
+               // Toast.makeText(PackageBuyStatusActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+                //System.out.print("FUFU"+ response.body());
             }
 
             @Override
             public void onFailure(Call<ExamHistory> call, Throwable t) {
-                Toast.makeText(PackageBuyStatusActivity.this, "bokachoda taka vor", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PackageBuyStatusActivity.this, "আপনার একাঊন্টে টাকা নেই। রিচার্জ করুন।", Toast.LENGTH_SHORT).show();
             }
         });
 

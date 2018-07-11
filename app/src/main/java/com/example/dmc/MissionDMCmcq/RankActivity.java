@@ -131,7 +131,7 @@ public class RankActivity extends AppCompatActivity {
                             }
                             @Override
                             public void onFailure(Call<List<ExamHistory>> call, Throwable t) {
-                                Toast.makeText(RankActivity.this, "error :(", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(RankActivity.this, "error :(", Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -145,7 +145,7 @@ public class RankActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<ExamHistory>> call, Throwable t) {
-                Toast.makeText(RankActivity.this, "Check your internet connection", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(RankActivity.this, "Check your internet connection", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -89,12 +89,15 @@ public class ArchiveActivity extends AppCompatActivity {
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                   ExamHistory eHist=(ExamHistory) adapterView.getItemAtPosition(i);
 
+                                  if(eHist.getTableName().equals("W"))
+                                      Toast.makeText(ArchiveActivity.this, "পরীক্ষায় অংশগ্রহণ করুন, যথাসময়ে উত্তরপত্র দেখানো হবে", Toast.LENGTH_SHORT).show();
+
                                  // Toast.makeText(ArchiveActivity.this, Integer.toString(eHist.getQuestionId()), Toast.LENGTH_SHORT).show();
-
-                                Intent intent = new Intent(ArchiveActivity.this, ArchieveQuestionActivity.class);
-
-                                intent.putExtra("apiQN",eHist.getQuestionId());
-                                startActivity(intent);
+                                else {
+                                      Intent intent = new Intent(ArchiveActivity.this, ArchieveQuestionActivity.class);
+                                      intent.putExtra("apiQN", eHist.getQuestionId());
+                                      startActivity(intent);
+                                  }
 
 
 

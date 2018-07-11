@@ -130,7 +130,7 @@ public class MedicalMainActivity extends AppCompatActivity {
         calle.enqueue(new Callback<Board>() {
             @Override
             public void onResponse(Call<Board> call, Response<Board> response) {
-                Toast.makeText(MedicalMainActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MedicalMainActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
                 Board board=response.body();
                 textViewN.setText(board.getNotice());
 
@@ -138,7 +138,7 @@ public class MedicalMainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Board> call, Throwable t) {
-                Toast.makeText( MedicalMainActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
+                //Toast.makeText( MedicalMainActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
             }
         });
 

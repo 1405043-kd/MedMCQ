@@ -75,12 +75,12 @@ public class ProfileActivity extends AppCompatActivity {
         Email.setText(user.getEmail());
         Name.setText(user.getDisplayName());
         if (user.getPhotoUrl() != null) {
-            Toast.makeText(ProfileActivity.this, "sdfdsg :(", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(ProfileActivity.this, "sdfdsg :(", Toast.LENGTH_SHORT).show();
             Glide.with(this)
                     .load(mAuth.getCurrentUser().getPhotoUrl())
                     .into(propic2);
         } else {
-            Toast.makeText(ProfileActivity.this, "error sdfdsg :(", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(ProfileActivity.this, "error sdfdsg :(", Toast.LENGTH_SHORT).show();
             Glide.with(this)
                     .load(doctor)
                     .into(propic2);
@@ -111,7 +111,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<Users> call, Throwable t) {
-                    Toast.makeText(ProfileActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(ProfileActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -176,14 +176,14 @@ public class ProfileActivity extends AppCompatActivity {
                     }
                     @Override
                     public void onFailure(Call<List<ExamHistory>> call, Throwable t) {
-                        Toast.makeText(ProfileActivity.this, "error :(", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(ProfileActivity.this, "error :(", Toast.LENGTH_SHORT).show();
                     }
                 });
 
             }
             @Override
             public void onFailure(Call<List<QuestionSet>> call, Throwable t) {
-                Toast.makeText(ProfileActivity.this, "error :(", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ProfileActivity.this, "error :(", Toast.LENGTH_SHORT).show();
             }
         });
 

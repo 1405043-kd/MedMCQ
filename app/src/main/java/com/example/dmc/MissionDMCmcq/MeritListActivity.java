@@ -50,7 +50,7 @@ public class MeritListActivity extends AppCompatActivity {
         if (extras != null) {
             apiStr = extras.getString("apiStr");
             progressBar.setVisibility(View.GONE);
-            Toast.makeText(MeritListActivity.this, apiStr, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MeritListActivity.this, apiStr, Toast.LENGTH_SHORT).show();
         }
 
         final Retrofit.Builder builder = new Retrofit.Builder()

@@ -236,7 +236,13 @@ public class ChapterQuestionActivity extends AppCompatActivity {
                 catch (Exception e){
                     //Intent intent = new Intent(ChapterQuestionActivity.this, AboutUsActivity.class);
                     Intent intent = new Intent(ChapterQuestionActivity.this, NOTREADYActivity.class);
+                    String string = "এই ডেইলি এক্সামটি এখনো অনুষ্ঠিত হয়নি। পরীক্ষার সময়সূচী নোটিস বোর্ডে জানিয়ে দেয়া হবে।";
+
+                    intent.putExtra("apiStr", string);
                     startActivity(intent);
+
+//                    Intent intent = new Intent(ChapterQuestionActivity.this, NOTREADYActivity.class);
+//                    startActivity(intent);
                 }
 
 
@@ -319,12 +325,15 @@ public class ChapterQuestionActivity extends AppCompatActivity {
 //                                launchActivityResult(bundle);
 
                                 if(apiStr.contains("DAILY")){
+                                    Intent intent = new Intent(ChapterQuestionActivity.this, NOTREADYActivity.class);
+                                    String string = "আপনার পরীক্ষা দেয়া সম্পন্ন হয়েছে। রাত ১২ টায় আর্কাইভে গিয়ে এই ডেইলি এক্সামের নাম এর বাটনে ক্লিক করলে উত্তরপত্র " +
+                                            "দেখতে পাবেন। আর আপনার প্রাপ্ত নাম্বার ও বর্তমান র‍্যাংক দেখতে চাইলে র‍্যাংক  দেখুন বাটনে ক্লিক করুন। আপনাকে দেখানো র‍্যাংক সময়ের" +
+                                            "সাথে সাথে আরও পরীক্ষার্থী অংশগ্রহণ ও তাদের প্রাপ্ত নাম্বারের ভিত্তিতে পরিবর্তিত হবে।";
 
-//                                    Intent intent = new Intent(ChapterQuestionActivity.this, AboutUsActivity.class);
-//                                    startActivity(intent);
-
-                                    Intent intent = new Intent( ChapterQuestionActivity.this, NOTREADYActivity.class);
+                                    intent.putExtra("apiStr", string);
                                     startActivity(intent);
+//                                    Intent intent = new Intent( ChapterQuestionActivity.this, NOTREADYActivity.class);
+//                                    startActivity(intent);
                                 }
                                 else launchActivityResult(bundle);
                             }
@@ -367,7 +376,7 @@ public class ChapterQuestionActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ExamHistory> call, Response<ExamHistory> response) {
             //    Toast.makeText(ChapterQuestionActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
-                System.out.print("FUFU"+ response.body());
+                //System.out.print("FUFU"+ response.body());
             }
 
             @Override

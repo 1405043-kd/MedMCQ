@@ -80,7 +80,7 @@ public class ChapterActivity extends AppCompatActivity{
         if (extras != null) {
             subName = extras.getString("subName");
         }
-        Toast.makeText(this, subName,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, subName,Toast.LENGTH_SHORT).show();
 
         chapterListView = (ListView) findViewById(R.id.chapter_pagination_list);
 
@@ -100,7 +100,7 @@ public class ChapterActivity extends AppCompatActivity{
         );
 
         chapterListbio2 = Arrays.asList(
-                "প্রাণির শ্রেণীবিন্যাস",
+                "প্রাণীর শ্রেণীবিন্যাস",
                 "জীনতত্ত্ব ও বিবর্তন",
                 "প্রাণীর আচরণ",
                 "প্রাণীর পরিচিতি",
@@ -225,7 +225,7 @@ public class ChapterActivity extends AppCompatActivity{
 //                startActivity(intent);
 
                 final String chapterName = (String) adapterView.getItemAtPosition(i);
-                final String apiStr= chapterName + " অধ্যায় এর প্রশ্ন দিয়ে পরীক্ষা দিন। পরীক্ষাটি দিতে হলে আপনার একাউন্ট থেকে ৩ টাকা কেটে নেয়া " +
+                final String apiStr= chapterName + " অধ্যায় এর প্রশ্ন দিয়ে পরীক্ষা দিন। পরীক্ষাটি দিতে হলে আপনার একাউন্ট থেকে শুধুমাত্র প্রথমবার ৩ টাকা কেটে নেয়া " +
                         "হবে।";
 
 
@@ -308,7 +308,7 @@ public class ChapterActivity extends AppCompatActivity{
                                     calle.enqueue(new Callback<ExamHistory>() {
                                         @Override
                                         public void onResponse(Call<ExamHistory> call, Response<ExamHistory> response) {
-                                            Toast.makeText(ChapterActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+                                           // Toast.makeText(ChapterActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
                                             System.out.print("FUFU"+ response.body());
 
                                             popupWindow.dismiss();
@@ -321,7 +321,7 @@ public class ChapterActivity extends AppCompatActivity{
 
                                         @Override
                                         public void onFailure(Call<ExamHistory> call, Throwable t) {
-                                            Toast.makeText( ChapterActivity.this, "Fokinni taka vor", Toast.LENGTH_SHORT).show();
+                                            //Toast.makeText( ChapterActivity.this, "Fokinni taka vor", Toast.LENGTH_SHORT).show();
 
                                         }
                                     });

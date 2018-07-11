@@ -33,6 +33,7 @@ public class ArchieveQuestionActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_archive_question);
             try {
+                System.out.println("madari1");
 
                 Bundle extras = getIntent().getExtras();
                 if (extras != null) {
@@ -41,6 +42,7 @@ public class ArchieveQuestionActivity extends AppCompatActivity{
                 lv = (ListView) findViewById(R.id.arch_question_pagination_list);
                 progressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
+                System.out.println("madari2");
 
                 final Retrofit.Builder builder = new Retrofit.Builder()
                         .baseUrl("http://missiondmc.ml/")
@@ -54,36 +56,65 @@ public class ArchieveQuestionActivity extends AppCompatActivity{
 
                 Call<List<Questions>> call_cq =questionClient.cqID(String.valueOf(QID));
 
+                System.out.println("madari3");
+
                 call_cq.enqueue(new Callback<List<Questions>>() {
                     @Override
                     public void onResponse(Call<List<Questions>> call, Response<List<Questions>> response) {
 
+                        try {
 
-                        progressBar.setVisibility(View.GONE);
-                        //  System.out.println("hcud"+"lllllllllllllllllllllllllll"+response.body().size());
+                            System.out.println("madari4");
+                            progressBar.setVisibility(View.GONE);
+                            //  System.out.println("hcud"+"lllllllllllllllllllllllllll"+response.body().size());
 
-                        questions = response.body();
-                        //System.out.print(response.body().get(0).getOption1());
-                        //Toast.makeText(ArchieveQuestionActivity.this, response.body().get(0).getOption1(), Toast.LENGTH_SHORT).show();
+                            questions = response.body();
+                            //System.out.print(response.body().get(0).getOption1());
+                            //Toast.makeText(ArchieveQuestionActivity.this, response.body().get(0).getOption1(), Toast.LENGTH_SHORT).show();
+
+                            if(questions!=null) {
+                                lv.setAdapter(new ArchieveAnsAdapter(ArchieveQuestionActivity.this, questions));
+                            }
+                            else
+                            {
+                               // System.out.println("baaal");
+                                String string = "রাত ১২ টার পর উত্তরপত্র উন্মুক্ত করা হবে।";
+                                Intent intent = new Intent(ArchieveQuestionActivity.this, NOTREADYActivity.class);
+                                intent.putExtra("apiStr", string);
+                                startActivity(intent);
+                            }
 
 
-                        lv.setAdapter(new ArchieveAnsAdapter(ArchieveQuestionActivity.this, questions));
+                            System.out.println("madari5");
 
 
+                        }
+                        catch (Exception e)
+                        {
+
+                            System.out.println("madari6");
+                            String string = "রাত ১২ টার পর উত্তরপত্র উন্মুক্ত করা হবে।";
+                            Intent intent = new Intent(ArchieveQuestionActivity.this, NOTREADYActivity.class);
+                            intent.putExtra("apiStr", string);
+                            startActivity(intent);
+                        }
                     }
                     @Override
                     public void onFailure(Call<List<Questions>> call, Throwable t) {
-
-                        Toast.makeText(ArchieveQuestionActivity.this, "error :(", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(ArchieveQuestionActivity.this, NOTREADYActivity.class);
-
-                        startActivity(intent);
+                        System.out.println("madari7");
+                        Toast.makeText(ArchieveQuestionActivity.this, "error :( try again", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(ArchieveQuestionActivity.this, NOTREADYActivity.class);
+//
+//                        startActivity(intent);
                     }
                 });
 
             }
             catch (Exception e){
+                System.out.println("madari8");
+                String string = "রাত ১২ টার পর উত্তরপত্র উন্মুক্ত করা হবে।";
                 Intent intent = new Intent(ArchieveQuestionActivity.this, NOTREADYActivity.class);
+                intent.putExtra("apiStr", string);
 
                 startActivity(intent);
             }

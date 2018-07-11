@@ -160,13 +160,13 @@ public class MainActivity extends AppCompatActivity
         call.enqueue(new Callback<Users>() {
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
-                Toast.makeText(MainActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "yes! :)", Toast.LENGTH_SHORT).show();
                 System.out.print("FUFU"+ response.body());
             }
 
             @Override
             public void onFailure(Call<Users> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MainActivity.this, "Already Exists", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -271,6 +271,11 @@ public class MainActivity extends AppCompatActivity
         } else if(id == R.id.userManual)
         {
             Intent intent = new Intent(MainActivity.this, UserManualActivity.class);
+            startActivity(intent);
+        }
+        else if(id == R.id.copyright)
+        {
+            Intent intent = new Intent(this, CopyrightActivity.class);
             startActivity(intent);
         }
 

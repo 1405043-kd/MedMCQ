@@ -113,7 +113,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".MediDentalPreviousActivity" />
+        <activity android:name=".MediDentalPreviousActivity"
+            android:label="বিগত সালের প্রশ্ন"
+            android:parentActivityName=".MedicalMainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MedicalMainActivity" />
+        </activity>
         <activity android:name=".PaymentActivity" />
         <activity
             android:name=".RankActivity"
@@ -184,15 +191,52 @@
         </activity>
         <activity
             android:name=".DailyExamActivity"
-            android:label="ডেইলি এক্সাম" />
+            android:label="ডেইলি এক্সাম"
+            android:parentActivityName=".MedicalMainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MedicalMainActivity"/>
+
+        </activity>
         <activity
             android:name=".ArchieveQuestionActivity"
             android:label="আর্কাইভ প্রশ্ন উত্তর" />
         <activity
             android:name=".AboutUsActivity"
-            android:label="আমাদের সম্পর্কে" />
-        <activity android:name=".NOTREADYActivity" />
-        <activity android:name=".UserManualActivity"></activity>
+            android:label="আমাদের সম্পর্কে"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".NOTREADYActivity"
+            android:label="স্ট্যাটাস"
+            android:parentActivityName=".MainActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+        </activity>
+        <activity android:name=".UserManualActivity"
+            android:label="ব্যবহারবিধি"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+        </activity>
+        <activity android:name=".CopyrightActivity"
+            android:label="কপিরাইট"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+        </activity>
     </application>
 
 </manifest>

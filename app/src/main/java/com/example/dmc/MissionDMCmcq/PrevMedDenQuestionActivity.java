@@ -43,7 +43,7 @@ public class PrevMedDenQuestionActivity extends AppCompatActivity{
             apiStr = extras.getString("apiStr");
         }
 
-        Toast.makeText(PrevMedDenQuestionActivity.this,apiStr, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(PrevMedDenQuestionActivity.this,apiStr, Toast.LENGTH_SHORT).show();
         startTimer();
         questionList = (ListView) findViewById(R.id.question_pagination_list);
         Retrofit.Builder builder = new Retrofit.Builder()
@@ -71,7 +71,7 @@ public class PrevMedDenQuestionActivity extends AppCompatActivity{
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Questions questions=(Questions) adapterView.getItemAtPosition(i);
 
-                        Toast.makeText(PrevMedDenQuestionActivity.this, questions.getQuestion(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(PrevMedDenQuestionActivity.this, questions.getQuestion(), Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -91,7 +91,7 @@ public class PrevMedDenQuestionActivity extends AppCompatActivity{
             @Override
             public void onTick(long millisUntilFinished) {
                 mTimeLeftInMillis = millisUntilFinished;
-                Toast.makeText(PrevMedDenQuestionActivity.this, "start"+mTimeLeftInMillis, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(PrevMedDenQuestionActivity.this, "start"+mTimeLeftInMillis, Toast.LENGTH_SHORT).show();
                 updateCountDownText();
             }
 
@@ -107,7 +107,7 @@ public class PrevMedDenQuestionActivity extends AppCompatActivity{
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
 
         String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-        Toast.makeText(PrevMedDenQuestionActivity.this, "asf"+timeLeftFormatted, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(PrevMedDenQuestionActivity.this, "asf"+timeLeftFormatted, Toast.LENGTH_SHORT).show();
         mTextViewCountDown.setText(timeLeftFormatted);
         toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP,150);
     }
