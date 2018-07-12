@@ -11,8 +11,9 @@
         android:id="@+id/textViewPopupDailyExam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="পরীক্ষাটি দিতে চাইলে আপনার একাউন্ট থেকে ৩ টাকা কেটে নেয়া হবে।"
-        android:textSize="18sp"
+        android:text="পরীক্ষাটি দিতে চাইলে আপনার একাউন্ট থেকে শুধুমাত্র প্রথমবার ৩ টাকা কেটে নেয়া হবে। যদি এই ডেইলি এক্সামটি পরে অনুষ্ঠিত হয় তাহলে
+আপনি পরীক্ষার দিন নতুন কোনো পেমেন্ট ছাড়াই পরীক্ষা দিতে পারবেন। যেসকল ডেইলি এক্সামের জন্য আপনি অগ্রিম পে করছেন তাদের নাম আর্কাইভে যোগ হয়ে যাবে।"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="#ffffff"/>
 

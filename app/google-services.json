@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:731371424517:android:9b4060ef76bb98b9",
         "android_client_info": {
-          "package_name": "com.example.dmc.MissionDMCmcq"
+          "package_name": "com.dmcadmson.dmc.MissionDMCmcq"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "731371424517-dg9ouf463d8u2kevl268t7soo0re35t5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.dmc.MissionDMCmcq",
+            "package_name": "com.dmcadmson.dmc.MissionDMCmcq",
             "certificate_hash": "5fffff0611873cac8daef97528950f1ff76d05fe"
           }
         },
@@ -54,7 +54,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:731371424517:android:70ea9a5dbf407500",
         "android_client_info": {
-          "package_name": "com.example.sakib.myapplication"
+          "package_name": "com.dmcadmson.sakib.myapplication"
         }
       },
       "oauth_client": [
@@ -62,7 +62,7 @@
           "client_id": "731371424517-p6lk3siev6b9saqeihaiqe5qm90glrc5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.sakib.myapplication",
+            "package_name": "com.dmcadmson.sakib.myapplication",
             "certificate_hash": "8ead4141c800353a02ede8fb30f613fd2e3b9438"
           }
         },
@@ -70,7 +70,7 @@
           "client_id": "731371424517-57nphvdqepfs7m0g98v88jkquvmmtf0n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.sakib.myapplication",
+            "package_name": "com.dmcadmson.sakib.myapplication",
             "certificate_hash": "5fffff0611873cac8daef97528950f1ff76d05fe"
           }
         },
@@ -78,7 +78,7 @@
           "client_id": "731371424517-bnimdgut608k0va18uviriovr51sq155.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.sakib.myapplication",
+            "package_name": "com.dmcadmson.sakib.myapplication",
             "certificate_hash": "4b5cba1c1806e847b1fb56819c846ce75a2a6563"
           }
         },
