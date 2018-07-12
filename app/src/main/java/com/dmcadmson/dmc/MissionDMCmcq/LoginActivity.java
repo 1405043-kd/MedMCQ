@@ -150,7 +150,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult connectionResult)
                     {
-                        Toast.makeText(LoginActivity.this, "Connection to Google Sign in failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "গুগল সাইন ইন সম্ভব হয়নি", Toast.LENGTH_SHORT).show();
                     }
                 }).addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
 
@@ -169,7 +169,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d(TAG, "facebook:onSuccess:" + loginResult);
-                Toast.makeText(LoginActivity.this, "facebook login successful...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "ফেসবুক সাইনইন সফল হয়েছে!", Toast.LENGTH_SHORT).show();
                 handleFacebookAccessToken(loginResult.getAccessToken());
                 //    SendUserToMainActivity();
 
@@ -225,11 +225,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             {
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
-                Toast.makeText(this, "Please wait, while we are getting your auth result...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "অপেক্ষা করুন, সাইনইন হচ্ছে ", Toast.LENGTH_SHORT).show();
             }
             else
             {
-                Toast.makeText(this, "Can't get Auth result.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "সাইনইন সম্ভব হয়নি", Toast.LENGTH_SHORT).show();
                 loadingBar.dismiss();
             }
         }
@@ -275,7 +275,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "LOGIN SUCCESSFUL!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "সাইনইন সফল হয়েছে!", Toast.LENGTH_SHORT).show();
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
